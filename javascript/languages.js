@@ -85,11 +85,12 @@ function setDisplay() {
 }
 
 var db_vn = [
+
     { "header": ["TẢI XUỐNG", "TẠI SAO StiB?", "LIÊN HỆ"] },
     {
         "title":
             [
-                "Cho giao dịch/vay mượn P2P trên hợp đồng thông minh StiB",
+                "Giao dịch/vay mượn P2P trên hợp đồng thông minh StiB",
                 "Không phí giao dịch",
                 "Bảo vệ pháp lý",
                 "Chia sẻ lợi nhuận",
@@ -102,7 +103,7 @@ var db_vn = [
                 "THIẾT KẾ, PHÁT TRIỂN VÀ PHI TẬP TRUNG CHO MỌI NGƯỜI VỚI NHỮNG TÍNH NĂNG ĐỘC NHẤT",
 
                 "StiB P2P",
-                "Cho vay và vay cũng như bảo hiểm và đầu tư với global P2P networks của chúng tôi",
+                "giao dịch và vay cũng như bảo hiểm và đầu tư với global P2P networks của chúng tôi",
                 "Stib CHARITY",
                 "Mục tiêu của chúng tôi là xây dựng một mô hình tự cung và tự cấp trong một cộng đồng được nhân rộng trên toàn cầu",
                 "StiB REWARDS",
@@ -113,7 +114,7 @@ var db_vn = [
     {
         "why":
             ["TẠI SAO NÊN GIAO DỊCH/CHO VAY TRÊN HỢP ĐỒNG THÔNG MINH StiB?", "KHÔNG PHÍ GIAO DỊCH",
-                "Luôn luôn miễn phí giao dịch với Hợp đồng thông minh StiB vì những rủi ro sẽ thuộc về bạn và những người khác!",
+                "Luôn luôn miễn phí giao dịch với hợp đồng thông minh StiB vì những rủi ro sẽ thuộc về bạn và những người khác!",
                 "CHIA SẺ LỢI NHUẬN", "Chúng tôi chia sẻ lợi nhuận cũng như tiền lãi với StiB Reserves thông qua đối tác",
                 "BẢO VỆ PHÁP LÝ", "Bảo vệ người giao dịch/khách hàng với StiB Legals bao gồm luật sư trong nước và quốc tế",
                 "TIỆN LỢI", "Dễ sử dụng, giao diện đẹp mắt và có mặt trên 200 quốc gia với hơn 10 ngôn ngữ phổ biến"]
@@ -121,12 +122,17 @@ var db_vn = [
     {
         "step":
             ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp đồng Thông minh StiB (Không Escrow)", " Người mua gửi tiền",
-                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến Hợp đồng Thông minh StiB (Không Tài sản thế chấp)",
+                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến hợp đồng thông minh StiB (Không Tài sản thế chấp)",
                 " Người cho vay gửi khoản vay", " Người vay trả tiền vay", " Người cho vay giải phóng",
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
+    },
+    {
+        "video": ["huongdantai-androi"]
+
     }];
 
 var db_en = [
+
     { "header": ["DOWNLOAD", "WHY StiB?", "CONTACT US"] },
     {
         "title":
@@ -136,7 +142,7 @@ var db_en = [
                 "Legal Protections",
                 "Profit Sharing",
                 "Simple & beautiful with amazing features.",
-                "instructions"]
+                "Instructions"]
     },
     {
         "about":
@@ -162,21 +168,24 @@ var db_en = [
                 "We are sharing the profits as well as interests with StiB Reserves.",
                 "LEGAL PROTECTIONS",
                 "Protect traders/clients with StiB Legals comprised of local lawyers internationally",
-                "CONVENIENCE", 
+                "CONVENIENCE",
                 "Easy to use, beautiful UI/UX & available 200+ countries + 10 most popular languages"]
     },
     {
         "step":
             ["TRADING P2P", "Step", " Seller Deposits to StiB's Smart Contracts. (Free Escrow)", " Buyer Marks as paid",
                 " Seller Releases.", "LENDING P2P", " Borrower Deposits to StiB's Smart Contracts. (Free Collateral)",
-                " Lender Sends the loan.", " Borrower Repays the loan.", "Lender Releases.",
+                " Lender Sends the loan.", " Borrower Repays the loan.", " Lender Releases.",
                 "CONTACT US", "ToS", "PRIVACY"]
+    },{
+        "video": ["Instruction"]
+
     }];
 
 
 var db = db_en;
 
-console.log("ok");
+
 
 function body(db) {
     var body_vn =
@@ -198,9 +207,9 @@ function body(db) {
             <!-- menu -->
             <div class="sub_menu" id="change-color">
                 <ul>
-                    <li><a href="#" class="n1">`+ db[0].header[0] + `</a> </li>
-                    <li><a href="#" class="n2">`+ db[0].header[1] + `</a></li>
-                    <li><a href="#" class="n3">`+ db[0].header[2] + `</a></li>
+                    <li><a href="#" id="n1">`+ db[0].header[0] + `</a> </li>
+                    <li><a href="#" id="n2">`+ db[0].header[1] + `</a></li>
+                    <li><a href="#" id="n3">`+ db[0].header[2] + `</a></li>
                 </ul>
             </div>
 
@@ -219,7 +228,7 @@ function body(db) {
                     <h1 class="line-after">Simply a better digital
                         exchange</h1>
                     <p class="sub-title" style="color: #333; font-style: italic; font-weight: bold;">`+
-                        db[1].title[0] + `</p>
+        db[1].title[0] + `</p>
                     <ul class="list-service">
                         <li><i class="fas fa-check"></i> <span>`+ db[1].title[1] + `</span></li>
                         <li><i class="fas fa-check"></i> <span>`+ db[1].title[2] + `</span></li>
@@ -229,13 +238,21 @@ function body(db) {
                     <div class="store d-flex flex-column">
                         <div class="androi" style="margin-bottom: 60px">
                             <div class="wrapper-link-android">
-                                <a
+                            <!-- <a / apk for androi to back up
                                     href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
                                     <img class="btn-android" width="200" height="auto"
                                         src="images/background/apk-androi.png">
                                     <img class="btn-android-hover" width="200" height="auto"
                                         src="images/background/apk-androi-hover.png">
                                 </a>
+                                google play -->
+                                <a
+                                href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
+                                <img class="btn-android" width="200" height="auto"
+                                    src="images/background/app-store-android.png">
+                             <!--   <img class="btn-android-hover" width="200" height="auto"
+                                    src="images/background/apk-androi-hover.png"> -->
+                            </a>
                                 <div class="wrapper btn-video">
                                     <button type="button" class="video-btn rounded-circle" data-toggle="modal"
                                         data-target="#modelId">
@@ -245,9 +262,9 @@ function body(db) {
                                         </div>
                                     </button>
                                 </div>
-                                <div class="qr-wrapper">
+                               <div class="qr-wrapper">
                                     <img src="images/background/apk.png" alt="" class="img-fluid">
-                                </div>
+                                </div> 
                             </div>
 
                             <div class="wrapper-link-ios" style="position: relative;">
@@ -286,7 +303,7 @@ function body(db) {
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
                                                     <video id="video-tut" autoplay muted loop playsinline >
-                                                        <source src="images/video/download-apk.mp4" type = "video/mp4">
+                                                      <source src="images/video/`+db[5].video[0]+`.mp4" type = "video/mp4"> 
                                                         This browser doesn't support video tag.
                                                     </video>
                                             </div>
@@ -646,18 +663,69 @@ function body(db) {
             <span> <a href="https://stib.co/index.php?showpage=privacy">`+ db[4].step[12] + `</a> </span>
         </div>
     </div>` ;
+    $(document).ready(function () {
+        $('#icon_menu').click(function (event) {
+            event.preventDefault();
+            $("#menu_show").fadeToggle("slow");
+            $('.container_header .sub_menu').addClass('active');
+            $('#icon_menu_close').addClass('active');
+        })
+
+        $('#icon_menu_close').click(function (event) {
+            event.preventDefault();
+            $('.container_header .sub_menu').removeClass('active');
+            $('#icon_menu_close').removeClass('active');
+        })
+
+        $('#n1').click(function (event) {
+            event.preventDefault();
+            if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
+
+                $('.sub_menu, #icon_menu_close').removeClass('active');
+            }
+            console.log("ok")
+            $('html').animate({ scrollTop: $('#downloadId').offset().top }, 500);
+        })
+        $('#n2').click(function (event) {
+            event.preventDefault();
+            if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
+                $('.sub_menu, #icon_menu_close').removeClass('active');
+            }
+            console.log("ok")
+            $('html').animate({ scrollTop: $('#show').offset().top - 60 }, 500);
+        })
+        $('#n3').click(function (event) {
+            event.preventDefault();
+            if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
+                $('.sub_menu, #icon_menu_close').removeClass('active');
+            }
+            $('html').animate({ scrollTop: $('#contact-us').offset().top - 60 }, 500);
+        })
+    })
     return body_vn;
 };
 $("#body_content").empty().html(body(db));
 setDisplay();
-$("#btnEngLang").click(function () {
+$("#btnEngLang").click(function (event) {
+    event.preventDefault();
     let db = db_en;
+    $("#btnVnLang").removeClass("lang-active");
+    $("#btnEngLang").addClass("lang-active");
     $("#body_content").empty().html(body(db));
     setDisplay();
+
+
 });
 $("#btnVnLang").click(function () {
+    event.preventDefault();
     let db = db_vn;
+    $("#btnEngLang").removeClass("lang-active");
+    $("#btnVnLang").addClass("lang-active");
+
     $("#body_content").empty().html(body(db));
+
     setDisplay();
+
 });
+
 

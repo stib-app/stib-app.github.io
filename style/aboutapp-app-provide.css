@@ -64,7 +64,6 @@
 }
 .about_app .title, .app_provide .title{
     font-size: 21px;
-    text-transform: uppercase;
     font-weight: bold;
     line-height: 50px;
 }
@@ -120,7 +119,7 @@
 .about_app .content ul li a {
     margin-top: 20px;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     padding: 12px 10px;
     text-transform: uppercase;
     background: #f38320;

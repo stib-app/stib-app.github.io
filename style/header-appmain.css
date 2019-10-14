@@ -29,9 +29,7 @@ a.lang {
     border-right: none;
 }
 
-a.lang:hover {
-    color: #f38320;
-}
+
 
 a.lang-active {
     color: #f38320!important;
@@ -625,20 +623,20 @@ ul.list-service li i {
     }
 }
 
-.btn-android-hover, .btn-ios-hover {
+ .btn-ios-hover {
     opacity: 0;
     visibility: hidden;
 }
 
-.wrapper-link-android a:hover img.btn-android-hover, .wrapper-link-ios a:hover img.btn-ios-hover {
+.wrapper-link-ios a:hover img.btn-ios-hover {
     opacity: 1;
     visibility: visible;
 }
 
-.wrapper-link-android a:hover img.btn-android, .wrapper-link-ios a:hover img.btn-ios {
+.wrapper-link-ios a:hover img.btn-ios {
     opacity: 0;
     visibility: hidden;
-}
+} 
 
 /* responsive */
 
@@ -902,6 +900,9 @@ ul.list-service li i {
 }
 
 @media(max-width: 550px) {
+    a.lang{
+        padding: 11px
+    }
     .app_sub .store span {
         font-size: 22px!important;
     }
