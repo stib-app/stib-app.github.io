@@ -508,7 +508,7 @@ function body(db) {
                                                 frameborder="0"
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe> -->
-                                            <video id="video-trade" muted loop>
+                                            <video id="video-trade" muted="false" loop>
                                                 <source src="images/video/buy-apk.mp4" type = "video/mp4">
                                                 <source src="images/video/sell-apk.mp4" type = "video/mp4">
                                                 This browser doesn't support video tag.
