@@ -176,7 +176,7 @@ var db_en = [
 
 var db = db_en;
 
-
+console.log("ok");
 
 function body(db) {
     var body_vn =

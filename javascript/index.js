@@ -78,6 +78,7 @@ $(document).ready(function () {
             $('#android-mockup-img').css({ "display": "none" });
             $('#iphone-mockup-img').css({ "display": "inline" });
             $('.wrapper-content-animation').addClass('ios-display');
+         
 
             $('.available-ios').addClass('ios-display');
             $('.wrapper-link-ios').addClass('ios-display');
@@ -113,9 +114,15 @@ $(document).ready(function () {
         $("#change-color ul li a").css("color", "#f39c12")
 
     }
+    var videoTrade = document.getElementById('video-trade');
+
+    videoTrade.play();
     $(window).scroll(function () {
+    var header_top = $('#header').offset().top + 60;
+
         var vitrihientai = window.pageYOffset;
-        // console.log(vitrihientai);
+        console.log(vitrihientai);
+        console.log(header_top)
 
         var page1 = $('#page1').offset().top;
         var page2 = page1 + $("#page1").outerHeight(true);
