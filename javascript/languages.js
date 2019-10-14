@@ -285,7 +285,7 @@ function body(db) {
                                                     frameborder="0"
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
-                                                    <video id="video-tut" autoplay muted loop>
+                                                    <video id="video-tut" autoplay muted loop playsinline >
                                                         <source src="images/video/download-apk.mp4" type = "video/mp4">
                                                         This browser doesn't support video tag.
                                                     </video>
@@ -508,7 +508,7 @@ function body(db) {
                                                 frameborder="0"
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe> -->
-                                            <video id="video-trade" muted="false" loop playsinline autoplay >
+                                            <video id="video-trade" muted loop playsinline autoplay >
                                                 <source src="images/video/buy-apk.mp4" type = "video/mp4">
                                                 <source src="images/video/sell-apk.ogg" type = "video/ogg">
                                                 <source src="images/video/sell-apk.webm" type = "video/webm">
@@ -543,7 +543,7 @@ function body(db) {
                                                     frameborder="0"
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
-                                                <video id="video-lend" muted loop>
+                                                <video id="video-lend" muted loop playsinline autoplay >
                                                     <source src="images/video/loan-apk.mp4" type = "video/mp4">
                                                     <source src="images/video/borrow-apk.mp4" type = "video/mp4">
                                                     This browser doesn't support video tag.
