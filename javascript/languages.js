@@ -230,7 +230,7 @@ function body(db) {
                         <div class="androi" style="margin-bottom: 60px">
                             <div class="wrapper-link-android">
                                 <a
-                                    href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40stiblabs2019/stib-p2p-5fd62ca8db994bddb5a4f848e0905a10-signed.apk">
+                                    href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
                                     <img class="btn-android" width="200" height="auto"
                                         src="images/background/apk-androi.png">
                                     <img class="btn-android-hover" width="200" height="auto"

@@ -108,6 +108,7 @@ $(document).ready(function () {
     }
     setDisplay();
 
+
     var header_top = $('#header').offset().top + 60;
 
     if (header_top > 60) {
@@ -121,8 +122,6 @@ $(document).ready(function () {
     var header_top = $('#header').offset().top + 60;
 
         var vitrihientai = window.pageYOffset;
-        console.log(vitrihientai);
-        console.log(header_top)
 
         var page1 = $('#page1').offset().top;
         var page2 = page1 + $("#page1").outerHeight(true);
@@ -150,6 +149,7 @@ $(document).ready(function () {
         var videoLend = document.getElementById('video-lend');
         if (vitrihientai > $('.dowload').offset().top - 300){
             videoTrade.play();
+            videoTrade.click();
         }
         else{
             videoTrade.pause();
@@ -158,6 +158,7 @@ $(document).ready(function () {
 
         if (vitrihientai > $('#page2Id').offset().top - 300){
             videoLend.play();
+            videoLend.click();
         }
         else{
             videoLend.pause();
