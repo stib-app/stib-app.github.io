@@ -59,8 +59,7 @@ $(document).ready(function () {
             if(flag ==true){
                 videoTrade.click();
                 flag = false ;
-            }
-            
+            }          
         }
         else{
             videoTrade.pause();

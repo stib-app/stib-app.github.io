@@ -56,6 +56,16 @@ function getDeviceName() {
 //    console.log(getDeviceName()) ;
 
 function setDisplay() {
+    var vitrihientai = window.pageYOffset;
+
+    if (vitrihientai > 30) {
+        $('#header').addClass('bg-active');
+        $('#logo-header').addClass('active');
+    }
+    else {
+        $('#header').removeClass('bg-active');
+        $('#logo-header').removeClass('active');
+    };
     var device = getDeviceName();
 
     // var device = 'iOS';
@@ -188,6 +198,7 @@ var db = db_en;
 
 
 function body(db) {
+    
     var body_vn =
         `	<div class="header" id="header">
         <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
@@ -663,7 +674,9 @@ function body(db) {
             <span> <a href="https://stib.co/index.php?showpage=privacy">`+ db[4].step[12] + `</a> </span>
         </div>
     </div>` ;
+   
     $(document).ready(function () {
+       
         $('#icon_menu').click(function (event) {
             event.preventDefault();
             $("#menu_show").fadeToggle("slow");
@@ -713,19 +726,14 @@ $("#btnEngLang").click(function (event) {
     $("#btnEngLang").addClass("lang-active");
     $("#body_content").empty().html(body(db));
     setDisplay();
-
-
 });
 $("#btnVnLang").click(function () {
     event.preventDefault();
     let db = db_vn;
     $("#btnEngLang").removeClass("lang-active");
     $("#btnVnLang").addClass("lang-active");
-
     $("#body_content").empty().html(body(db));
-
     setDisplay();
-
 });
 
 
