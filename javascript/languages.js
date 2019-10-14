@@ -510,8 +510,8 @@ function body(db) {
                                                 allowfullscreen></iframe> -->
                                             <video id="video-trade" muted="false" loop>
                                                 <source src="images/video/buy-apk.mp4" type = "video/mp4">
-                                                <source src="images/video/sell-apk.ogg" type = "video/mp4">
-                                                <source src="images/video/sell-apk.webm" type = "video/mp4">
+                                                <source src="images/video/sell-apk.ogg" type = "video/ogg">
+                                                <source src="images/video/sell-apk.webm" type = "video/webm">
 
                                                 This browser doesn't support video tag.
                                             </video>
