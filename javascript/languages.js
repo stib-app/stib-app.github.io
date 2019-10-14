@@ -508,7 +508,7 @@ function body(db) {
                                                 frameborder="0"
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe> -->
-                                            <video id="video-trade" muted="false" loop controls >
+                                            <video id="video-trade" muted="false" loop playsinline >
                                                 <source src="images/video/buy-apk.mp4" type = "video/mp4">
                                                 <source src="images/video/sell-apk.ogg" type = "video/ogg">
                                                 <source src="images/video/sell-apk.webm" type = "video/webm">
