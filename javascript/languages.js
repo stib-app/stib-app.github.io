@@ -109,7 +109,7 @@ var db_vn = [
     },
     {
         "about":
-            ["Giới thiệu StiB App",
+            ["Giới thiệu StiB Apps",
                 "THIẾT KẾ, PHÁT TRIỂN VÀ PHI TẬP TRUNG CHO MỌI NGƯỜI VỚI NHỮNG TÍNH NĂNG ĐỘC NHẤT",
 
                 "StiB P2P",
@@ -131,8 +131,8 @@ var db_vn = [
     },
     {
         "step":
-            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp đồng Thông minh StiB (Không Escrow)", " Người mua gửi tiền",
-                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến hợp đồng thông minh StiB (Không Tài sản thế chấp)",
+            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp đồng Thông minh StiB (Miễn phí)", " Người mua gửi tiền",
+                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến hợp đồng thông minh StiB (Miễn phí)",
                 " Người cho vay gửi khoản vay", " Người vay trả tiền vay", " Người cho vay giải phóng",
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
     },
@@ -313,7 +313,7 @@ function body(db) {
                                                     frameborder="0"
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
-                                                    <video id="video-tut" autoplay muted loop playsinline >
+                                                    <video id="video-tut" autoplay muted="muted" loop playsinline >
                                                       <source src="images/video/`+db[5].video[0]+`.mp4" type = "video/mp4"> 
                                                         This browser doesn't support video tag.
                                                     </video>
@@ -536,7 +536,7 @@ function body(db) {
                                                 frameborder="0"
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe> -->
-                                            <video id="video-trade" muted loop playsinline autoplay >
+                                            <video id="video-trade" muted="muted" loop playsinline autoplay >
                                                 <source src="images/video/buy-apk.mp4" type = "video/mp4">
                                                 <source src="images/video/sell-apk.ogg" type = "video/ogg">
                                                 <source src="images/video/sell-apk.webm" type = "video/webm">
@@ -571,7 +571,7 @@ function body(db) {
                                                     frameborder="0"
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
-                                                <video id="video-lend" muted loop playsinline autoplay >
+                                                <video id="video-lend" muted="muted" loop playsinline autoplay >
                                                     <source src="images/video/loan-apk.mp4" type = "video/mp4">
                                                     <source src="images/video/borrow-apk.mp4" type = "video/mp4">
                                                     This browser doesn't support video tag.

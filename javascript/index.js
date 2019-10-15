@@ -11,7 +11,7 @@ $(document).ready(function () {
     var videoTut = document.getElementById('video-tut');
     $('#modelId').on('hide.bs.modal', function () {
         videoTut.pause();
-        videoTut.currentTime = 0;
+        // videoTut.currentTime = 0;
     })
     $('.video-btn').click(function(){
         videoTut.play();
@@ -24,7 +24,7 @@ $(document).ready(function () {
     }
     var videoTrade = document.getElementById('video-trade');
 
-    videoTrade.play();
+
     $(window).scroll(function () {
     var header_top = $('#header').offset().top + 60;
 
@@ -55,9 +55,9 @@ $(document).ready(function () {
         var videoTrade = document.getElementById('video-trade');
         var videoLend = document.getElementById('video-lend');
         if (vitrihientai > $('.dowload').offset().top - 300){
-            videoTrade.play();
+            
             if(flag ==true){
-                videoTrade.click();
+                videoTrade.play();
                 flag = false ;
             }          
         }
@@ -67,9 +67,9 @@ $(document).ready(function () {
         }
 
         if (vitrihientai > $('#page2Id').offset().top - 300){
-            videoLend.play();
+            
             if(flag ==true){
-                videoLend.click();
+                videoLend.play();
                 flag = false ;
             }
         }
@@ -77,8 +77,6 @@ $(document).ready(function () {
             videoLend.pause();
             videoLend.currentTime = 0;
         }
-
-
         // ////////////////////////////////////// animation 
         if (header_top >= distance && header_top < distance3) {
             $("#photo_animation").css("animation-play-state", "running");
@@ -98,8 +96,5 @@ $(document).ready(function () {
     // video play
     $("#show_video_download").click(function () {
         $("#video").show();
-    });
-
-    
-    
+    });    
 });
