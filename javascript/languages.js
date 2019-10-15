@@ -105,7 +105,9 @@ var db_vn = [
                 "Bảo vệ pháp lý",
                 "Chia sẻ lợi nhuận",
                 "Đơn giản và đẹp mắt với các tính năng tuyệt vời",
-                "Hướng dẫn"]
+                "Hướng dẫn",
+                "Có phiên bản cho android!",
+            "Có phiên bản cho ios!"]
     },
     {
         "about":
@@ -117,7 +119,7 @@ var db_vn = [
                 "Stib CHARITY",
                 "Mục tiêu của chúng tôi là xây dựng một mô hình tự cung và tự cấp trong một cộng đồng được nhân rộng trên toàn cầu",
                 "StiB REWARDS",
-                "Tặng cho đối tác mã giảm giá và những phần thưởng qua những giao dịch như cho vay, vay, đầu tư,bảo hiểm...",
+                "Tặng cho đối tác mã giảm giá và những phần thưởng qua những giao dịch như cho vay, vay, đầu tư, bảo hiểm...",
                 "StiB AI",
                 "Chúng tôi sẽ bắt đầu sử dụng Trí Tuệ Nhân Tạo với AI Chat để hỗ trợ giao dịch và cho vay", "TÌM HIỂU THÊM"]
     },
@@ -131,7 +133,7 @@ var db_vn = [
     },
     {
         "step":
-            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp đồng Thông minh StiB (Miễn phí)", " Người mua gửi tiền",
+            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến hợp đồng thông minh StiB (Miễn phí)", " Người mua gửi tiền",
                 " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến hợp đồng thông minh StiB (Miễn phí)",
                 " Người cho vay gửi khoản vay", " Người vay trả tiền vay", " Người cho vay giải phóng",
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
@@ -152,7 +154,9 @@ var db_en = [
                 "Legal Protections",
                 "Profit Sharing",
                 "Simple & beautiful with amazing features.",
-                "Instructions"]
+                "Instructions",
+            "Also available on Android!",
+        "Also available on iOS!"]
     },
     {
         "about":
@@ -318,10 +322,10 @@ function body(db) {
 
                         </div>
                         <div class="available-ios">
-                            <p>Also available on Android!</p>
+                            <p>`+ db[1].title[6] + `</p>
                         </div>
                         <div class="available-android">
-                            <p>Also available on iOS!</p>
+                            <p>`+ db[1].title[7] + `</p>
                         </div>
 
                     </div>
