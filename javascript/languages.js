@@ -100,14 +100,14 @@ var db_vn = [
     {
         "title":
             [
-                "Giao dịch/vay mượn P2P trên hợp đồng thông minh StiB",
-                "Không phí giao dịch",
+                "Giao dịch/vay mượn P2P trên Hợp Đồng Thông Minh StiB",
+                "Không phí Giao Dịch",
                 "Bảo vệ pháp lý",
                 "Chia sẻ lợi nhuận",
                 "Đơn giản và đẹp mắt với các tính năng tuyệt vời",
                 "Hướng dẫn",
                 "Có phiên bản cho android!",
-            "Có phiên bản cho ios!"]
+                "Có phiên bản cho ios!"]
     },
     {
         "about":
@@ -115,7 +115,7 @@ var db_vn = [
                 "THIẾT KẾ, PHÁT TRIỂN VÀ PHI TẬP TRUNG CHO MỌI NGƯỜI VỚI NHỮNG TÍNH NĂNG ĐỘC NHẤT",
 
                 "StiB P2P",
-                "giao dịch và vay cũng như bảo hiểm và đầu tư với global P2P networks của chúng tôi",
+                "Giao dịch và vay cũng như bảo hiểm và đầu tư với global P2P networks của chúng tôi",
                 "Stib CHARITY",
                 "Mục tiêu của chúng tôi là xây dựng một mô hình tự cung và tự cấp trong một cộng đồng được nhân rộng trên toàn cầu",
                 "StiB REWARDS",
@@ -126,21 +126,23 @@ var db_vn = [
     {
         "why":
             ["TẠI SAO NÊN GIAO DỊCH/CHO VAY TRÊN HỢP ĐỒNG THÔNG MINH StiB?", "KHÔNG PHÍ GIAO DỊCH",
-                "Luôn luôn miễn phí giao dịch với hợp đồng thông minh StiB vì những rủi ro sẽ thuộc về bạn và những người khác!",
+                "Luôn luôn miễn phí giao dịch với Hợp Đồng Thông Minh StiB vì những rủi ro sẽ thuộc về bạn và những người khác!",
                 "CHIA SẺ LỢI NHUẬN", "Chúng tôi chia sẻ lợi nhuận cũng như tiền lãi với StiB Reserves thông qua đối tác",
                 "BẢO VỆ PHÁP LÝ", "Bảo vệ người giao dịch/khách hàng với StiB Legals bao gồm luật sư trong nước và quốc tế",
                 "TIỆN LỢI", "Dễ sử dụng, giao diện đẹp mắt và có mặt trên 200 quốc gia với hơn 10 ngôn ngữ phổ biến"]
     },
     {
         "step":
-            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến hợp đồng thông minh StiB (Miễn phí)", " Người mua gửi tiền",
-                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến hợp đồng thông minh StiB (Miễn phí)",
+            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp Đồng Thông Minh StiB (Miễn Phí Giao Dịch)", " Người mua gửi tiền",
+                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến Hợp Đồng Thông Minh StiB (Miễn Phí Giao Dịch)",
                 " Người cho vay gửi khoản vay", " Người vay trả tiền vay", " Người cho vay giải phóng",
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
     },
     {
         "video": ["huongdantai-androi"]
 
+    }, {
+        "image": ["taixuong-androi", "taixuong-androi-hover"]
     }];
 
 var db_en = [
@@ -155,8 +157,8 @@ var db_en = [
                 "Profit Sharing",
                 "Simple & beautiful with amazing features.",
                 "Instructions",
-            "Also available on Android!",
-        "Also available on iOS!"]
+                "Also available on Android!",
+                "Also available on iOS!"]
     },
     {
         "about":
@@ -194,15 +196,21 @@ var db_en = [
     }, {
         "video": ["Instruction"]
 
+    }, {
+        "image": ["apk-androi", "app-store-android"]
     }];
 
+$.getJSON('https://freegeoip.app/json/', function (data) {
+    if (data.country_name == "Vietnam") {
+        $("#body_content").empty().html(body(db_vn));
+        setDisplay();
+    } else {
+        $("#body_content").empty().html(body(db_en))
+        setDisplay();
+    }
 
-var db = db_en;
-
-
-
+});
 function body(db) {
-
     var body_vn =
         `<div class="header" id="header">
         <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
@@ -256,9 +264,9 @@ function body(db) {
                                 <a
                                 href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
                                 <img class="btn-android" width="200" height="auto"
-                                src="images/background/apk-androi.png"> 
+                                src="images/background/`+ db[6].image[0] + `.png"> 
                                <img class="btn-android-hover" width="200" height="auto"
-                               src="images/background/app-store-android.png">
+                               src="images/background/`+ db[6].image[1] + `.png">
                                    
                             </a>
                                 <div class="wrapper btn-video">
@@ -384,7 +392,7 @@ function body(db) {
                         <p>`+ db[2].about[3] + `<br>&emsp;</p>
                     </div>
                     <div class="learn-more">
-                        <a href="http://charity.stib.co" target="_blank"> `+ db[2].about[10] + `</a>
+                        <a href="http://m.stib.co/" target="_blank"> `+ db[2].about[10] + `</a>
                     </div>
                 </li>
                 <li class="col-md-6 col-lg-3">
@@ -408,7 +416,7 @@ function body(db) {
                         <p>`+ db[2].about[7] + `</p>
                     </div>
                     <div class="learn-more">
-                        <a href="http://charity.stib.co" target="_blank"> `+ db[2].about[10] + `</a>
+                        <a href="#" target="_blank"> `+ db[2].about[10] + `</a>
                     </div>
                 </li>
                 <li class="col-md-6 col-lg-3">
@@ -420,7 +428,7 @@ function body(db) {
                         <p>`+ db[2].about[9] + `<br>&emsp;</p>
                     </div>
                     <div class="learn-more">
-                        <a href="http://charity.stib.co" target="_blank"> `+ db[2].about[10] + `</a>
+                        <a href="#" target="_blank" > `+ db[2].about[10] + `</a>
                     </div>
                 </li>
             </ul>
@@ -673,6 +681,103 @@ function body(db) {
     </div>` ;
 
     $(document).ready(function () {
+        var flag;
+  
+        // var media = $('.video-tut').get(0);
+        // $('#modelId').on('hide.bs.modal', function () {
+        //     var videoAttr = $('#source-video').attr("src");
+        //     $('#source-video').attr("src", "");
+        //     $('#source-video').attr("src", videoAttr);
+        // })
+        var videoTut = document.getElementById('video-tut');
+        $('#modelId').on('hide.bs.modal', function () {
+            videoTut.pause();
+            // videoTut.currentTime = 0;
+        })
+        $('.video-btn').click(function(){
+            videoTut.play();
+        })
+        var header_top = $('#header').offset().top + 60;
+    
+        if (header_top > 60) {
+            $("#change-color ul li a").css("color", "#f39c12")
+    
+        }
+        var videoTrade = document.getElementById('video-trade');
+    
+    
+        $(window).scroll(function () {
+        var header_top = $('#header').offset().top + 60;
+    
+            var vitrihientai = window.pageYOffset;
+    
+            var page1 = $('#page1').offset().top;
+            var page2 = page1 + $("#page1").outerHeight(true);
+            var distance = $('#show').offset().top;
+            var distance3 = distance + 250;
+            var header_top = $('#header').offset().top + 60;
+    
+            if (vitrihientai > 30) {
+                $('#header').addClass('bg-active');
+                $('#logo-header').addClass('active');
+            }
+            else {
+                $('#header').removeClass('bg-active');
+                $('#logo-header').removeClass('active');
+            }
+            if (vitrihientai > 300) {
+                $('#to-top').addClass('active');
+            }
+            else {
+                $('#to-top').removeClass('active');
+            }
+    
+            // //////////////////////////////////////////////
+            var videoTrade = document.getElementById('video-trade');
+            var videoLend = document.getElementById('video-lend');
+            if (vitrihientai > $('.dowload').offset().top - 300){
+                
+                if(flag ==true){
+                    videoTrade.play();
+                    flag = false ;
+                }          
+            }
+            else{
+                videoTrade.pause();
+                videoTrade.currentTime = 0;
+            }
+    
+            if (vitrihientai > $('#page2Id').offset().top - 300){
+                
+                if(flag ==true){
+                    videoLend.play();
+                    flag = false ;
+                }
+            }
+            else{
+                videoLend.pause();
+                videoLend.currentTime = 0;
+            }
+            // ////////////////////////////////////// animation 
+            if (header_top >= distance && header_top < distance3) {
+                $("#photo_animation").css("animation-play-state", "running");
+                $(".app_provide .detail2").css("animation-play-state", "running");
+            } else if (header_top >= distance3) {
+                $(".app_provide .detail3").css("animation-play-state", "running");
+    
+            } else {
+                $("#photo_animation").css("animation-play-state", "paused");
+            }
+        });
+        // //////////////////////////////////////////////////////////////
+        //  bottom to top
+        $("#to-top").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 500);
+        })
+        // video play
+        $("#show_video_download").click(function () {
+            $("#video").show();
+        });    
 
         $('#icon_menu').click(function (event) {
             event.preventDefault();
@@ -714,22 +819,20 @@ function body(db) {
     })
     return body_vn;
 };
-$("#body_content").empty().html(body(db));
-setDisplay();
+
+
 $("#btnEngLang").click(function (event) {
     event.preventDefault();
-    let db = db_en;
     $("#btnVnLang").removeClass("lang-active");
     $("#btnEngLang").addClass("lang-active");
-    $("#body_content").empty().html(body(db));
+    $("#body_content").empty().html(body(db_en));
     setDisplay();
 });
 $("#btnVnLang").click(function () {
     event.preventDefault();
-    let db = db_vn;
     $("#btnEngLang").removeClass("lang-active");
     $("#btnVnLang").addClass("lang-active");
-    $("#body_content").empty().html(body(db));
+    $("#body_content").empty().html(body(db_vn));
     setDisplay();
 });
 
