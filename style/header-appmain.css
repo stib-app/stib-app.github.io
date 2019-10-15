@@ -623,17 +623,17 @@ ul.list-service li i {
     }
 }
 
- .btn-ios-hover {
+ .btn-ios-hover, .btn-android-hover {
     opacity: 0;
     visibility: hidden;
 }
 
-.wrapper-link-ios a:hover img.btn-ios-hover {
+.wrapper-link-ios a:hover img.btn-ios-hover, .wrapper-link-android a:hover img.btn-android-hover {
     opacity: 1;
     visibility: visible;
 }
 
-.wrapper-link-ios a:hover img.btn-ios {
+.wrapper-link-ios a:hover img.btn-ios, .wrapper-link-android a:hover img.btn-android {
     opacity: 0;
     visibility: hidden;
 } 

@@ -187,7 +187,7 @@ var db_en = [
                 " Seller Releases.", "LENDING P2P", " Borrower Deposits to StiB's Smart Contracts. (Free Collateral)",
                 " Lender Sends the loan.", " Borrower Repays the loan.", " Lender Releases.",
                 "CONTACT US", "ToS", "PRIVACY"]
-    },{
+    }, {
         "video": ["Instruction"]
 
     }];
@@ -198,9 +198,9 @@ var db = db_en;
 
 
 function body(db) {
-    
+
     var body_vn =
-        `	<div class="header" id="header">
+        `<div class="header" id="header">
         <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
             <div class="logo" id="logo-header">
                 <a href="https://stib.co/">
@@ -248,21 +248,14 @@ function body(db) {
                     </ul>
                     <div class="store d-flex flex-column">
                         <div class="androi" style="margin-bottom: 60px">
-                            <div class="wrapper-link-android">
-                            <!-- <a / apk for androi to back up
-                                    href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
-                                    <img class="btn-android" width="200" height="auto"
-                                        src="images/background/apk-androi.png">
-                                    <img class="btn-android-hover" width="200" height="auto"
-                                        src="images/background/apk-androi-hover.png">
-                                </a>
-                                google play -->
+                            <div class="wrapper-link-android">                          
                                 <a
                                 href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
                                 <img class="btn-android" width="200" height="auto"
-                                    src="images/background/app-store-android.png">
-                             <!--   <img class="btn-android-hover" width="200" height="auto"
-                                    src="images/background/apk-androi-hover.png"> -->
+                                src="images/background/apk-androi.png"> 
+                               <img class="btn-android-hover" width="200" height="auto"
+                               src="images/background/app-store-android.png">
+                                   
                             </a>
                                 <div class="wrapper btn-video">
                                     <button type="button" class="video-btn rounded-circle" data-toggle="modal"
@@ -314,7 +307,7 @@ function body(db) {
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
                                                     <video id="video-tut" autoplay muted="muted" loop playsinline >
-                                                      <source src="images/video/`+db[5].video[0]+`.mp4" type = "video/mp4"> 
+                                                      <source src="images/video/`+ db[5].video[0] + `.mp4" type = "video/mp4"> 
                                                         This browser doesn't support video tag.
                                                     </video>
                                             </div>
@@ -674,9 +667,9 @@ function body(db) {
             <span> <a href="https://stib.co/index.php?showpage=privacy">`+ db[4].step[12] + `</a> </span>
         </div>
     </div>` ;
-   
+
     $(document).ready(function () {
-       
+
         $('#icon_menu').click(function (event) {
             event.preventDefault();
             $("#menu_show").fadeToggle("slow");
