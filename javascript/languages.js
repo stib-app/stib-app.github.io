@@ -143,6 +143,8 @@ var db_vn = [
 
     }, {
         "image": ["taixuong-androi", "taixuong-androi-hover"]
+    },{
+        "contact" : ["(+84) 906 097 525", "Sg-VN","https://t.me/StiBvietnam"]
     }];
 
 var db_en = [
@@ -197,19 +199,21 @@ var db_en = [
         "video": ["Instruction", "trade-en","loan-en"]
 
     }, {
-        "image": ["apk-androi", "app-store-android"]
+        "image": ["google", "app-store-android"]
+    },{
+        "contact" : ["(+1)(617) 863-7286", "Boston, MA, USA","https://t.me/StiBenglish"]
     }];
 
 $.getJSON('https://freegeoip.app/json/', function (data) {
     if (data.country_name == "Vietnam") {
         $("#body_content").empty().html(body(db_vn));
-        $(".btn-current-lang").html("VN");
+        $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
         $(".btnVnLang").addClass("lang-active") ;   
        
         setDisplay();
     } else {
         $("#body_content").empty().html(body(db_en))
-        $(".btn-current-lang").html("EN");
+        $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
         setDisplay();
         $(".btnEngLang").addClass("lang-active")
        
@@ -294,9 +298,9 @@ function body(db) {
                             <a
                             href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
                             <img class="btn-android" width="200" height="auto"
-                            src="images/background/google.png"> 
+                            src="images/background/`+ db[6].image[0] + `.png"> 
                            <img class="btn-android-hover" width="200" height="auto"
-                           src="images/background/app-store-android.png">
+                           src="images/background/`+ db[6].image[1] + `.png">
                                
                         </a>
                             <div class="wrapper btn-video">
@@ -331,7 +335,7 @@ function body(db) {
                                     </div>
                                 </button>
                             </div>
-                            <div class="qr-wrapper" style="z-index:1000; background-color: white" >
+                            <div class="qr-wrapper" style="z-index:2; background-color: white" >
                                 <img src="images/background/coming-soon-PNG.png" alt="" class="img-fluid">
                             </div>
                         </div>
@@ -440,7 +444,8 @@ function body(db) {
                     <p>`+ db[2].about[7] + `</p>
                 </div>
                 <div class="learn-more">
-                    <a href="" target="_blank"> `+ db[2].about[10] + `</a>
+              
+                    <a href="" style=" cursor: not-allowed" title="comming soon"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
             <li class="col-md-6 col-lg-3">
@@ -451,8 +456,8 @@ function body(db) {
                     <h4>S<span style="text-transform: lowercase!important;">ti</span>B AI</h4>
                     <p>`+ db[2].about[9] + `<br>&emsp;</p>
                 </div>
-                <div class="learn-more">
-                    <a href="" target="_blank"> `+ db[2].about[10] + `</a>
+                <div class="learn-more" title="comming soon" >
+                    <a href=""  style="cursor: not-allowed" > `+ db[2].about[10] + `</a>
                 </div>
             </li>
         </ul>
@@ -644,7 +649,7 @@ function body(db) {
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="info-contact">
                                 <img src="images/svg/phone-call.svg" alt="lostimg" class="icon-contact">
-                                <span style="color: #333;"> <span>(+1)</span>(617) 863&minus;7286</span>
+                                <span style="color: #333;">`+ db[7].contact[0] + `</span>
                             </div>
                             <div class="info-contact mb-0">
                                 <img src="images/svg/envelope.svg" alt="lostimg" class="icon-contact">
@@ -659,7 +664,7 @@ function body(db) {
                             </div>
                             <div class="info-contact mb-0">
                                 <img src="images/svg/address.svg" alt="lostimg" class="icon-contact">
-                                <span>Boston, MA, USA</span>
+                                <span>`+ db[7].contact[1] + `</span>
                             </div>
                         </div>
                     </div>
@@ -676,7 +681,7 @@ function body(db) {
         <li> <a href="https://twitter.com/StiBLabs" class="twitter" target="_blank"></a> </li>
         <li><a href="https://www.linkedin.com/company/stib-labs" class="linkedin" target="_blank"></a>
         </li>
-        <li><a href="https://t.me/stibeng" class="telegram" target="_blank"></a></li>
+        <li><a href="`+ db[7].contact[2] + `" class="telegram" target="_blank"></a></li>
     </ul>
     <div class="bt_title">
         <span style="border: none">© StiB Labs 2014-2140, All Rights Reserved</span>
@@ -690,7 +695,14 @@ function body(db) {
         var flag;
       
         $(".btn-current-lang").click(function(){   
-          $(".dual-lang").fadeToggle("slow","swing");             
+       if(flag_show_lang==true){
+        $(".fa-greater-than").addClass("rotatory");
+        flag_show_lang = false;
+       }  else{
+        $(".fa-greater-than").removeClass("rotatory");
+        flag_show_lang = true ;
+       }
+          $(".dual-lang").slideToggle("slow");            
         })
        
         $(".btnEngLang").click(function (event) {
@@ -699,7 +711,7 @@ function body(db) {
             $("#body_content").empty().html(body(db_en));
             $(".btnVnLang").removeClass("lang-active");
             $(".btnEngLang").addClass("lang-active");
-            $(".btn-current-lang").html("EN");
+            $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
         
             setDisplay();
         });
@@ -710,7 +722,7 @@ function body(db) {
             $("#body_content").empty().html(body(db_vn));
             $(".btnEngLang").removeClass("lang-active");
             $(".btnVnLang").addClass("lang-active");
-            $(".btn-current-lang").html("VN");
+            $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
             setDisplay();
         });
         
@@ -747,7 +759,7 @@ function body(db) {
             var distance3 = distance + 250;
             var header_top = $('#header').offset().top + 60;
 
-            if (vitrihientai > circle1) {
+            if (vitrihientai > circle1 + 60 ) {
                 $('#header').addClass('bg-active');
                 $('#logo-header').addClass('active');
             }

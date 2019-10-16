@@ -17,6 +17,11 @@
     top: 300px;
     right: 1px;
 }
+.rotatory{
+    transform: rotate(90deg) scale(0.8) translateX(3px);
+    
+ 
+}
 
 a.lang {
 
@@ -41,18 +46,18 @@ a.eng {
 .circle1 .btn-current-lang{
     position: absolute;
     bottom: 5px;
-    right: -14px;
+    right: -22px;
   
 }
 .logo .btn-current-lang{
     position: absolute;
     bottom: -4px;
-    right: -28px
+    right: -44px
 }
 .circle1 .dual-lang {
     position: absolute;
     bottom: -67px;
-    right: -44px;
+    right: -20px;
   z-index: 2;
   border: #95a5a6 solid 1px;
   background-color:white;
@@ -60,7 +65,7 @@ a.eng {
 .logo .dual-lang{
     position: absolute;
     top: 48px;
-    right: -39px;
+    right: -47px;
     z-index: 2;
     border: #95a5a6 solid 1px;
     background-color:white;
