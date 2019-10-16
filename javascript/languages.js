@@ -130,8 +130,8 @@ function body(db) {
     `<div class="header" id="header">
     <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
         <div class="logo" id="logo-header">
-            <a href="https://stib.co/" >  <img src="images/svg/logo.svg" style="width: auto; height: 40px" />  </a>
-            <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer"> </div>
+            <a href="https://stib.co/" >  <img src="images/svg/logo.svg" style="width: auto; height: 27px" />  </a>
+            <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer;font-size: 10px; ; "> </div>
 
                 <div class="dual-lang" style="display: none">
                 <div class="lang-option d-flex flex-column" >
