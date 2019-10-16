@@ -1,4 +1,4 @@
-
+//  Vietnamese
 var db_vn = [
 
     { "header": ["TẢI XUỐNG", "TẠI SAO StiB?", "LIÊN HỆ"] },
@@ -51,7 +51,7 @@ var db_vn = [
     },{
         "contact" : ["(+84) 906 097 525", "Sg,Viet Nam","https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
     }];
-
+//  english
 var db_en = [
 
     { "header": ["DOWNLOAD", "WHY StiB?", "CONTACT US"] },
@@ -108,7 +108,7 @@ var db_en = [
     },{
         "contact" : ["(+1)(617) 863-7286", "Boston, MA, USA","https://t.me/StiBenglish","https://www.facebook.com/StiBLabs/"]
     }];
-
+//  get Ip location Viet Nam to set languages
 $.getJSON('https://freegeoip.app/json/', function (data) {
     if (data.country_name == "Vietnam") {
         $("#body_content").empty().html(body(db_vn));
@@ -124,8 +124,7 @@ $.getJSON('https://freegeoip.app/json/', function (data) {
 
 });
 
-
-
+//  set languages
 function body(db) {
     var body_vn =
     `<div class="header" id="header">
@@ -591,7 +590,8 @@ function body(db) {
         <span> <a href="https://stib.co/index.php?showpage=privacy">`+ db[4].step[12] + `</a> </span>
     </div>
 </div>`;
-
+// /////////////////////////////////////////////////////////////////////////////////////////////
+//  index.js after 
     $(document).ready(function () {
         function getDeviceName() {
             var deviceName = '';
