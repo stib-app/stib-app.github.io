@@ -19,32 +19,45 @@
 }
 
 a.lang {
-    padding: 15px;
-    background: #fff;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
+
+    padding: 17px 4px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
     color: #333;
-    border: 1px solid #5252522b;
+ opacity: 0;
     border-right: none;
+   
+}
+
+.dual-lang:hover .lang{
+    display: block!important;
+    opacity: 1!important;
 }
 
 
 
 a.lang-active {
     color: #f38320!important;
+    display: block!important;
+    opacity: 1!important;
+  
+    
 }
+
 
 a.eng {
     border-bottom: none!important;
 }
 
 .dual-lang {
+
     position: fixed;
-    top: 10%;
+    top: 0px;
     right: 0;
-    z-index: 2;
+    z-index: 100;
 }
+
 
 .wrapper-animation-banner {
     position: relative;
@@ -655,6 +668,12 @@ ul.list-service li i {
 }
 
 @media (max-width:1000px) {
+    .dual-lang {
+        position: fixed;
+        top: 0px;
+        right: 40px;
+        z-index: 100;
+    }
     .main_app .app_sub {
         max-width: 100%;
         -webkit-box-flex: 0;
