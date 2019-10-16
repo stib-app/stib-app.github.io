@@ -1,99 +1,4 @@
 
-function getDeviceName() {
-    var deviceName = '';
-
-    var isMobile = {
-        Android: function () {
-            return navigator.userAgent.match(/Android/i);
-        },
-        Datalogic: function () {
-            return navigator.userAgent.match(/DL-AXIS/i);
-        },
-        Bluebird: function () {
-            return navigator.userAgent.match(/EF500/i);
-        },
-        Honeywell: function () {
-            return navigator.userAgent.match(/CT50/i);
-        },
-        Zebra: function () {
-            return navigator.userAgent.match(/TC70|TC55/i);
-        },
-        BlackBerry: function () {
-            return navigator.userAgent.match(/BlackBerry/i);
-        },
-        iOS: function () {
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        Windows: function () {
-            return navigator.userAgent.match(/IEMobile/i);
-        },
-        any: function () {
-            return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
-        }
-    };
-
-    if (isMobile.Datalogic())
-        deviceName = 'Datalogic';
-    else if (isMobile.Bluebird())
-        deviceName = 'Bluebird'; // android
-    else if (isMobile.Honeywell())
-        deviceName = 'Honeywell'; // android
-    else if (isMobile.Zebra())
-        deviceName = 'Zebra'; // android
-    else if (isMobile.BlackBerry())
-        deviceName = 'BlackBerry'; // android
-    else if (isMobile.iOS())
-        deviceName = 'iOS';
-    else if ((deviceName == '') && (isMobile.Android()))
-        deviceName = 'Android';
-    else if ((deviceName == '') && (isMobile.Windows()))
-        deviceName = 'Windows';
-
-
-
-    return deviceName;
-}
-//    console.log(getDeviceName()) ;
-
-function setDisplay() {
-    var vitrihientai = window.pageYOffset;
-
-    if (vitrihientai > 30) {
-        $('#header').addClass('bg-active');
-        $('#logo-header').addClass('active');
-    }
-    else {
-        $('#header').removeClass('bg-active');
-        $('#logo-header').removeClass('active');
-    };
-    var device = getDeviceName();
-
-    // var device = 'iOS';
-    // var device = 'Android';
-    // var device = 'PC'
-    if (device == 'iOS') { // tren iOS
-        $('#android-mockup-img').css({ "display": "none" });
-        $('#iphone-mockup-img').css({ "display": "inline" });
-        $('.wrapper-content-animation').addClass('ios-display');
-
-        $('.available-ios').addClass('ios-display');
-        $('.wrapper-link-ios').addClass('ios-display');
-        $('.wrapper-link-android').addClass('ios-display');
-    }
-    else if (device == 'Android') { // tren Android
-        $('#android-mockup-img').css({ "display": "inline" });
-        $('#iphone-mockup-img').css({ "display": "none" });
-
-        $('.available-android').addClass('android-display');
-        $('.wrapper-link-android').addClass('android-display');
-        $('.wrapper-link-ios').addClass('android-display');
-    }
-    else { // tren PC, mac dinh hien thi ca hai
-        $('#android-mockup-img').css({ "display": "inline" });
-        $('#iphone-mockup-img').css({ "display": "none" });
-    }
-}
-
 var db_vn = [
 
     { "header": ["TẢI XUỐNG", "TẠI SAO StiB?", "LIÊN HỆ"] },
@@ -106,8 +11,8 @@ var db_vn = [
                 "Chia Sẻ Lợi Nhuận",
                 "Đơn giản và đẹp mắt với các tính năng tuyệt vời",
                 "Hướng dẫn",
-                "Có phiên bản cho android!",
-                "Có phiên bản cho ios!"]
+                "Có phiên bản cho Android!",
+                "Có phiên bản cho iOS!"]
     },
     {
         "about":
@@ -144,7 +49,7 @@ var db_vn = [
     }, {
         "image": ["taixuong-androi", "taixuong-androi-hover"]
     },{
-        "contact" : ["(+84) 906 097 525", "Sg-VN","https://t.me/StiBvietnam"]
+        "contact" : ["(+84) 906 097 525", "Sg,Viet Nam","https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
     }];
 
 var db_en = [
@@ -201,7 +106,7 @@ var db_en = [
     }, {
         "image": ["google", "app-store-android"]
     },{
-        "contact" : ["(+1)(617) 863-7286", "Boston, MA, USA","https://t.me/StiBenglish"]
+        "contact" : ["(+1)(617) 863-7286", "Boston, MA, USA","https://t.me/StiBenglish","https://www.facebook.com/StiBLabs/"]
     }];
 
 $.getJSON('https://freegeoip.app/json/', function (data) {
@@ -209,20 +114,17 @@ $.getJSON('https://freegeoip.app/json/', function (data) {
         $("#body_content").empty().html(body(db_vn));
         $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
         $(".btnVnLang").addClass("lang-active") ;   
-       
-        setDisplay();
+      
     } else {
         $("#body_content").empty().html(body(db_en))
-        $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
-        setDisplay();
-        $(".btnEngLang").addClass("lang-active")
-       
-        
+        $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");     
+        $(".btnEngLang").addClass("lang-active")  
+      
     }
 
 });
-// $("#body_content").empty().html(body(db_en));
-// setDisplay();
+
+
 
 function body(db) {
     var body_vn =
@@ -327,7 +229,7 @@ function body(db) {
                                     src="images/background/apk-ios-hover.png">
                             </a>
                             <div class="wrapper btn-video">
-                                <button type="button" class="video-btn rounded-circle" data-toggle=""
+                                <button type="button" class="video-btn rounded-circle" data-toggle="modal"
                                     data-target="#modelId">
                                     <i class="fas fa-play"></i>
                                     <div>
@@ -676,7 +578,7 @@ function body(db) {
 <!-- //////////////////////////////////////////////////////////////////////// -->
 <div class="bottom">
     <ul>
-        <li><a href="https://www.facebook.com/StiBLabs/" class="facebook" target="_blank">
+        <li><a href="`+ db[7].contact[3] + `" class="facebook" target="_blank">
             </a></li>
         <li> <a href="https://twitter.com/StiBLabs" class="twitter" target="_blank"></a> </li>
         <li><a href="https://www.linkedin.com/company/stib-labs" class="linkedin" target="_blank"></a>
@@ -691,6 +593,97 @@ function body(db) {
 </div>`;
 
     $(document).ready(function () {
+        function getDeviceName() {
+            var deviceName = '';
+    
+            var isMobile = {
+                Android: function () {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                Datalogic: function () {
+                    return navigator.userAgent.match(/DL-AXIS/i);
+                },
+                Bluebird: function () {
+                    return navigator.userAgent.match(/EF500/i);
+                },
+                Honeywell: function () {
+                    return navigator.userAgent.match(/CT50/i);
+                },
+                Zebra: function () {
+                    return navigator.userAgent.match(/TC70|TC55/i);
+                },
+                BlackBerry: function () {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function () {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Windows: function () {
+                    return navigator.userAgent.match(/IEMobile/i);
+                },
+                any: function () {
+                    return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
+                }
+            };
+    
+            if (isMobile.Datalogic())
+                deviceName = 'Datalogic';
+            else if (isMobile.Bluebird())
+                deviceName = 'Bluebird'; // android
+            else if (isMobile.Honeywell())
+                deviceName = 'Honeywell'; // android
+            else if (isMobile.Zebra())
+                deviceName = 'Zebra'; // android
+            else if (isMobile.BlackBerry())
+                deviceName = 'BlackBerry'; // android
+            else if (isMobile.iOS())
+                deviceName = 'iOS';
+            else if ((deviceName == '') && (isMobile.Android()))
+                deviceName = 'Android';
+            else if ((deviceName == '') && (isMobile.Windows()))
+                deviceName = 'Windows';
+    
+            return deviceName;
+        }
+    
+        function setDisplay() {
+            var device = getDeviceName();
+            // console.log(getDeviceName());
+            // var device = 'iOS';
+            // var device = 'Android';
+            // var device = 'PC'
+            if (device == 'iOS') { // tren iOS
+                $('#android-mockup-img').css({ "display": "none" });
+                $('#iphone-mockup-img').css({ "display": "inline" });
+                $('.wrapper-content-animation').addClass('ios-display');
+    
+                $('.available-ios').addClass('ios-display');
+                $('.wrapper-link-ios').addClass('ios-display');
+                $('.wrapper-link-android').addClass('ios-display');
+                for (let index = 0; index < $('.modal-body').length; index++) {
+                    $('.modal-body').eq(index).addClass('ios-display');
+                }
+                for (let index = 0; index < $('.wrapper-video-tut').length; index++) {
+                    $('.wrapper-video-tut').eq(index).addClass('ios-display');
+                }
+                for (let index = 0; index < $('iframe').length; index++) {
+                    $('iframe').eq(index).addClass('ios-display');
+                }
+            }
+            else if (device == 'Android') { // tren Android
+                $('#android-mockup-img').css({ "display": "inline" });
+                $('#iphone-mockup-img').css({ "display": "none" });
+    
+                $('.available-android').addClass('android-display');
+                $('.wrapper-link-android').addClass('android-display');
+                $('.wrapper-link-ios').addClass('android-display');
+            }
+            else { // tren PC, mac dinh hien thi ca hai
+                $('#android-mockup-img').css({ "display": "inline" });
+                $('#iphone-mockup-img').css({ "display": "none" });
+            }
+        }
+        setDisplay();
         var flag_show_lang = true ;
         var flag;
       
@@ -712,7 +705,6 @@ function body(db) {
             $(".btnVnLang").removeClass("lang-active");
             $(".btnEngLang").addClass("lang-active");
             $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
-        
             setDisplay();
         });
         $(".btnVnLang").click(function () {
@@ -858,7 +850,8 @@ function body(db) {
             }
             $('html,body').animate({ scrollTop: $('#contact-us').offset().top - 60 }, 500);
         })
-    })
+    });
+    console.log("body")
     return body_vn;
 };
 
