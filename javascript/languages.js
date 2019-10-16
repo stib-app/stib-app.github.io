@@ -100,10 +100,10 @@ var db_vn = [
     {
         "title":
             [
-                "Giao Dịch (mua/bán + vay/mượn) P2P trên Hợp Đồng Thông Minh StiB",
+                "Giao Dịch (mua/bán + cho vay/mượn) P2P trên Hợp Đồng Thông Minh StiB",
                 "Miễn phí Giao Dịch",
-                "Bảo vệ pháp lý",
-                "Chia sẻ lợi nhuận",
+                "Bảo Vệ Pháp Lý",
+                "Chia Sẻ Lợi Nhuận",
                 "Đơn giản và đẹp mắt với các tính năng tuyệt vời",
                 "Hướng dẫn",
                 "Có phiên bản cho android!",
@@ -125,16 +125,16 @@ var db_vn = [
     },
     {
         "why":
-            ["TẠI SAO NÊN GIAO DỊCH/CHO VAY TRÊN HỢP ĐỒNG THÔNG MINH StiB?", "KHÔNG PHÍ GIAO DỊCH",
+            ["TẠI SAO NÊN GIAO DỊCH/VAY TRÊN HỢP ĐỒNG THÔNG MINH StiB?", "KHÔNG PHÍ GIAO DỊCH",
                 "Luôn luôn miễn phí giao dịch với Hợp Đồng Thông Minh StiB vì những rủi ro sẽ thuộc về bạn và những người khác!",
-                "CHIA SẺ LỢI NHUẬN", "Chúng tôi chia sẻ lợi nhuận cũng như tiền lãi với StiB Reserves thông qua đối tác",
-                "BẢO VỆ PHÁP LÝ", "Bảo vệ người giao dịch/khách hàng với StiB Legals bao gồm luật sư trong nước và quốc tế",
-                "TIỆN LỢI", "Dễ sử dụng, giao diện đẹp mắt và có mặt trên 200 quốc gia với hơn 10 ngôn ngữ phổ biến"]
+                "CHIA SẺ LỢI NHUẬN", "Chúng tôi chia sẻ lợi nhuận cũng như tiền lãi với StiB Reserves thông qua đối tác.",
+                "BẢO VỆ PHÁP LÝ", "Bảo vệ người giao dịch/khách hàng với StiB Legals bao gồm luật sư trong nước và quốc tế.",
+                "TIỆN LỢI", "Dễ sử dụng, giao diện đẹp mắt và có mặt trên 200 quốc gia với hơn 10 ngôn ngữ phổ biến."]
     },
     {
         "step":
-            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp Đồng Thông Minh StiB (Miễn Phí Giao Dịch)", " Người mua gửi tiền",
-                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến Hợp Đồng Thông Minh StiB (Miễn Phí Giao Dịch)",
+            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp Đồng Thông Minh StiB", " Người mua gửi tiền",
+                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến Hợp Đồng Thông Minh StiB",
                 " Người cho vay gửi khoản vay", " Người vay trả tiền vay", " Người cho vay giải phóng",
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
     },
@@ -189,8 +189,8 @@ var db_en = [
     },
     {
         "step":
-            ["TRADING P2P", "Step", " Seller Deposits to StiB's Smart Contracts. (Free Escrow)", " Buyer Marks as paid",
-                " Seller Releases.", "LENDING P2P", " Borrower Deposits to StiB's Smart Contracts. (Free Collateral)",
+            ["TRADING P2P", "Step", " Seller Deposits to StiB's Smart Contracts", " Buyer Marks as paid",
+                " Seller Releases.", "LENDING P2P", " Borrower Deposits to StiB's Smart Contracts",
                 " Lender Sends the loan.", " Borrower Repays the loan.", " Lender Releases.",
                 "CONTACT US", "ToS", "PRIVACY"]
     }, {
@@ -203,30 +203,40 @@ var db_en = [
 $.getJSON('https://freegeoip.app/json/', function (data) {
     if (data.country_name == "Vietnam") {
         $("#body_content").empty().html(body(db_vn));
-        $("#btnVnLang").addClass("lang-active") ;
-     
+        $(".btn-current-lang").html("VN");
+        $(".btnVnLang").addClass("lang-active") ;   
        
         setDisplay();
     } else {
         $("#body_content").empty().html(body(db_en))
+        $(".btn-current-lang").html("EN");
         setDisplay();
-        $("#btnEngLang").addClass("lang-active")
-        $(".dual-lang").addClass("flex-column-reverse")
+        $(".btnEngLang").addClass("lang-active")
+       
         
     }
 
 });
-$("#body_content").empty().html(body(db_en));
-setDisplay();
+// $("#body_content").empty().html(body(db_en));
+// setDisplay();
 
 function body(db) {
     var body_vn =
     `<div class="header" id="header">
     <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
         <div class="logo" id="logo-header">
-            <a href="https://stib.co/">
-                <img src="images/svg/logo.svg" style="width: auto; height: 40px" />
-            </a>
+            <a href="https://stib.co/" >  <img src="images/svg/logo.svg" style="width: auto; height: 40px" />  </a>
+            <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer"> </div>
+
+                <div class="dual-lang" style="display: none">
+                <div class="lang-option d-flex flex-column" >
+                <a  href="#" class="vn lang btnVnLang ">VN <i class="fas fa-check"></i> </a>
+                <a  href="#" class="eng lang btnEngLang "> EN <i class="fas fa-check"></i></a>	
+                </div>
+                </div>
+              
+                
+          
         </div>
         <div></div>
         <!-- icon for reponsive mobile open menu -->
@@ -242,7 +252,6 @@ function body(db) {
                 <li><a href="#" id="n1">`+ db[0].header[0] + `</a> </li>
                 <li><a href="#" id="n2">`+ db[0].header[1] + `</a></li>
                 <li><a href="#" id="n3">`+ db[0].header[2] + `</a></li>
-                <li><a href="#" id="n3">&nbsp &nbsp &nbsp &nbsp</a></li>
             </ul>
         </div>
     </div>
@@ -251,16 +260,26 @@ function body(db) {
 <!-- /////////////////////////////////////////////////////////// -->
 <!-- introduce StiB APP -->
 <div id="downloadId" class="main_app d-flex flex-row justify-content-center align-items-center">
+
     <div class="container">
         <div class="box row">
             <div class="app_sub col-lg-6 col-md-6 col-12">
                 <div class="circle">
-                    <div class="circle1"><img src="images/svg/logo.svg" alt=""></div>
+                    <div class="circle1">
+                    <img src="images/svg/logo.svg" alt="">
+                    <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer"> </div>
+                    <div class="dual-lang" style="display: none">
+               
+                          <div class="lang-option d-flex flex-column" >
+                           <a href="#" class="vn lang btnVnLang">VN <i class="fas fa-check"></i> </a>
+                           <a  href="#" class="eng lang btnEngLang"> EN <i class="fas fa-check"></i></a>
+                          </div>	
+                    </div>
+                    </div>                 
                 </div>
                 <h1 class="line-after">Simply a better digital
                     exchange</h1>
-                <p class="sub-title" style="color: #333; font-style: italic; font-weight: bold;">`+
-    db[1].title[0] + `</p>
+                <p class="sub-title" style="color: #333; font-style: italic; font-weight: bold;">`+db[1].title[0] + `</p>
                 <ul class="list-service">
                     <li><i class="fas fa-check"></i> <span>`+ db[1].title[1] + `</span></li>
                     <li><i class="fas fa-check"></i> <span>`+ db[1].title[2] + `</span></li>
@@ -397,7 +416,7 @@ function body(db) {
                     <p>`+ db[2].about[3] + `<br>&emsp;</p>
                 </div>
                 <div class="learn-more">
-                    <a href="http://charity.stib.co" target="_blank"> `+ db[2].about[10] + `</a>
+                    <a href="#" target="_blank"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
             <li class="col-md-6 col-lg-3">
@@ -421,7 +440,7 @@ function body(db) {
                     <p>`+ db[2].about[7] + `</p>
                 </div>
                 <div class="learn-more">
-                    <a href="http://charity.stib.co" target="_blank"> `+ db[2].about[10] + `</a>
+                    <a href="" target="_blank"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
             <li class="col-md-6 col-lg-3">
@@ -433,7 +452,7 @@ function body(db) {
                     <p>`+ db[2].about[9] + `<br>&emsp;</p>
                 </div>
                 <div class="learn-more">
-                    <a href="http://charity.stib.co" target="_blank"> `+ db[2].about[10] + `</a>
+                    <a href="" target="_blank"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
         </ul>
@@ -667,8 +686,34 @@ function body(db) {
 </div>`;
 
     $(document).ready(function () {
+        var flag_show_lang = true ;
         var flag;
-
+      
+        $(".btn-current-lang").click(function(){   
+          $(".dual-lang").fadeToggle("slow","swing");             
+        })
+       
+        $(".btnEngLang").click(function (event) {
+            event.preventDefault();
+         
+            $("#body_content").empty().html(body(db_en));
+            $(".btnVnLang").removeClass("lang-active");
+            $(".btnEngLang").addClass("lang-active");
+            $(".btn-current-lang").html("EN");
+        
+            setDisplay();
+        });
+        $(".btnVnLang").click(function () {
+            event.preventDefault();
+        
+           
+            $("#body_content").empty().html(body(db_vn));
+            $(".btnEngLang").removeClass("lang-active");
+            $(".btnVnLang").addClass("lang-active");
+            $(".btn-current-lang").html("VN");
+            setDisplay();
+        });
+        
         // var media = $('.video-tut').get(0);
         // $('#modelId').on('hide.bs.modal', function () {
         //     var videoAttr = $('#source-video').attr("src");
@@ -691,21 +736,18 @@ function body(db) {
         }
         var videoTrade = document.getElementById('video-trade');
 
-     $(".fa-check").click(function(){
-         $()
-     })
         $(window).scroll(function () {
             var header_top = $('#header').offset().top + 60;
 
             var vitrihientai = window.pageYOffset;
-
+            var circle1 = $(".circle1").offset().top + $(".circle1").outerHeight(true);
             var page1 = $('#page1').offset().top;
             var page2 = page1 + $("#page1").outerHeight(true);
             var distance = $('#show').offset().top;
             var distance3 = distance + 250;
             var header_top = $('#header').offset().top + 60;
 
-            if (vitrihientai > 30) {
+            if (vitrihientai > circle1) {
                 $('#header').addClass('bg-active');
                 $('#logo-header').addClass('active');
             }
@@ -786,7 +828,7 @@ function body(db) {
 
                 $('.sub_menu, #icon_menu_close').removeClass('active');
             }
-            console.log("ok")
+    
             $('html, body').animate({ scrollTop: $('#downloadId').offset().top }, 500);
         })
         $('#n2').click(function (event) {
@@ -794,7 +836,7 @@ function body(db) {
             if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
                 $('.sub_menu, #icon_menu_close').removeClass('active');
             }
-            console.log("ok")
+         
             $('html, body').animate({ scrollTop: $('#show').offset().top - 60 }, 500);
         })
         $('#n3').click(function (event) {
@@ -809,24 +851,5 @@ function body(db) {
 };
 
 
-$("#btnEngLang").click(function (event) {
-    event.preventDefault();
-    $("#btnVnLang").removeClass("lang-active");
-    $("#btnEngLang").addClass("lang-active");
-    $("#body_content").empty().html(body(db_en));
-    $(".dual-lang").addClass("flex-column-reverse")
-
-    setDisplay();
-});
-$("#btnVnLang").click(function () {
-    event.preventDefault();
-    $("#btnEngLang").removeClass("lang-active");
-    $("#btnVnLang").addClass("lang-active");
-    $("#body_content").empty().html(body(db_vn));
-    $(".dual-lang").removeClass("flex-column-reverse")
-
-
-    setDisplay();
-});
 
 

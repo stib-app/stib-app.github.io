@@ -20,42 +20,50 @@
 
 a.lang {
 
-    padding: 17px 4px;
+    padding: 5px 13px;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
     color: #333;
- opacity: 0;
     border-right: none;
    
 }
-
-.dual-lang:hover .lang{
-    display: block!important;
-    opacity: 1!important;
-}
-
-
-
-a.lang-active {
+.lang-active {
     color: #f38320!important;
     display: block!important;
-    opacity: 1!important;
-  
-    
+     
 }
 
 
 a.eng {
     border-bottom: none!important;
 }
-
-.dual-lang {
-
-    position: fixed;
-    top: 0px;
-    right: 0;
-    z-index: 100;
+.circle1 .btn-current-lang{
+    position: absolute;
+    bottom: 5px;
+    right: -14px;
+  
+}
+.logo .btn-current-lang{
+    position: absolute;
+    bottom: -4px;
+    right: -28px
+}
+.circle1 .dual-lang {
+    position: absolute;
+    bottom: -67px;
+    right: -44px;
+  z-index: 2;
+  border: #95a5a6 solid 1px;
+  background-color:white;
+}
+.logo .dual-lang{
+    position: absolute;
+    top: 48px;
+    right: -39px;
+    z-index: 2;
+    border: #95a5a6 solid 1px;
+    background-color:white;
 }
 
 
@@ -247,6 +255,7 @@ iframe.ios-display {
 }
 
 .container_header .logo {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
 }
@@ -300,7 +309,10 @@ iframe.ios-display {
     -webkit-animation: move 2.5s linear infinite;
     animation: move 2.5s linear infinite;
 }
-
+.circle1{
+    position: relative;
+    width: fit-content;
+}
 .circle1 img {
     width: 350px;
     height: auto;
@@ -668,12 +680,7 @@ ul.list-service li i {
 }
 
 @media (max-width:1000px) {
-    .dual-lang {
-        position: fixed;
-        top: 0px;
-        right: 40px;
-        z-index: 100;
-    }
+  
     .main_app .app_sub {
         max-width: 100%;
         -webkit-box-flex: 0;
