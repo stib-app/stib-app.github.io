@@ -118,8 +118,7 @@ $.getJSON('https://freegeoip.app/json/', function (data) {
     } else {
         $("#body_content").empty().html(body(db_en))
         $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");     
-        $(".btnEngLang").addClass("lang-active")  
-      
+        $(".btnEngLang").addClass("lang-active")  ;    
     }
 
 });
@@ -699,8 +698,7 @@ function body(db) {
         })
        
         $(".btnEngLang").click(function (event) {
-            event.preventDefault();
-         
+            event.preventDefault();       
             $("#body_content").empty().html(body(db_en));
             $(".btnVnLang").removeClass("lang-active");
             $(".btnEngLang").addClass("lang-active");
@@ -709,8 +707,6 @@ function body(db) {
         });
         $(".btnVnLang").click(function () {
             event.preventDefault();
-        
-           
             $("#body_content").empty().html(body(db_vn));
             $(".btnEngLang").removeClass("lang-active");
             $(".btnVnLang").addClass("lang-active");
@@ -851,7 +847,6 @@ function body(db) {
             $('html,body').animate({ scrollTop: $('#contact-us').offset().top - 60 }, 500);
         })
     });
-    console.log("body")
     return body_vn;
 };
 
