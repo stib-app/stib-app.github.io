@@ -120,6 +120,7 @@ fetch('https://ipinfo.io/')
     console.log(json)
 })
 .catch(err => {
+    console.log(err);
     $("#body_content").empty().html(body(db_en))
     $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
     $(".btnEngLang").addClass("lang-active");
