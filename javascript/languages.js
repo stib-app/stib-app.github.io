@@ -125,6 +125,9 @@ $.getJSON('https://ipinfo.io/', function (data) {
 
 });
 
+
+$.get("https://ipinfo.io", function (response) { console.log(response.city, response.country); }, "jsonp");
+
 //  set languages
 function body(db) {
     var body_vn =
