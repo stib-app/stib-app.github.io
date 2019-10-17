@@ -111,20 +111,29 @@ var db_en = [
 
 //  get Ip location Viet Nam to set languages
 
-    
-    
 
-fetch('https://ipinfo.io/')
-.then(res => res.json())
-.then(json => {
-    console.log(json)
-})
-.catch(err => {
-    console.log(err);
-    $("#body_content").empty().html(body(db_en))
-    $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
-    $(".btnEngLang").addClass("lang-active");
-})
+
+
+fetch('https://freegeoip.app/json/')
+    .then(res => res.json())
+    .then(json => {
+        const { country_code } = json;
+        if (country_code === 'VN') {
+            $("#body_content").empty().html(body(db_vn))
+            $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
+            $(".btnEngLang").addClass("lang-active");
+        } else {
+            $("#body_content").empty().html(body(db_en))
+            $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
+            $(".btnEngLang").addClass("lang-active");
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        $("#body_content").empty().html(body(db_en))
+        $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
+        $(".btnEngLang").addClass("lang-active");
+    })
 
 
 //  set languages
