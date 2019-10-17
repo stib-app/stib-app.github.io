@@ -125,13 +125,9 @@ var db_en = [
 
 // });
 
-try {
-    const response = await fetch('https://freegeoip.app/json/');
-    const myJson = await response.json();
-    console.log(JSON.stringify(myJson));
-} catch(err){
-    console.error(err);
-}
+fetch('https://ipinfo.io/')
+    .then(res => res.json())
+    .then(json => console.log(json))
 
 //  set languages
 function body(db) {
