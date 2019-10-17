@@ -115,7 +115,7 @@ var db_en = [
     
 
 fetch('https://ipinfo.io/')
-.then(res => console.log(res))
+.then(res => res.json())
 .then(json => {
     console.log(json)
 })
