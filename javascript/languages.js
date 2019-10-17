@@ -109,40 +109,20 @@ var db_en = [
         "contact": ["(+1)(617) 863-7286", "Boston, MA, USA", "https://t.me/StiBenglish", "https://www.facebook.com/StiBLabs/"]
     }];
 
-    var agent = navigator.userAgent.toLowerCase();
-    var isChrome = /chrome|crios/.test(agent) && ! /edge|opr\//.test(agent);
-    var isBrave = isChrome && window.navigator.plugins.length === 0 && window.navigator.mimeTypes.length === 0;
 //  get Ip location Viet Nam to set languages
-// if(isBrave){
-//     $.getJSON('https://ipinfo.io/', function (data) {
-//         if (data.country == "Vietnam") {
-//             $("#body_content").empty().html(body(db_vn));
-//             $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
-//             $(".btnVnLang").addClass("lang-active");
+
     
-//         } else {
-//             $("#body_content").empty().html(body(db_en))
-//             $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
-//             $(".btnEngLang").addClass("lang-active");
-//         }
     
-//     });
-    
-// }else{
-//     $("#body_content").empty().html(body(db_en))
-//     $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
-//     $(".btnEngLang").addClass("lang-active");
-// }
 
 fetch('https://ipinfo.io/')
-.then(res => res.json())
+.then(res => console.log(res))
 .then(json => {
-    const data = json;
-    console.log(data)
+    console.log(json)
 })
 .catch(err => {
-    console.log(err)
-    console.log('tieng anh')
+    $("#body_content").empty().html(body(db_en))
+    $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
+    $(".btnEngLang").addClass("lang-active");
 })
 
 
