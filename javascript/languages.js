@@ -44,12 +44,12 @@ var db_vn = [
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
     },
     {
-        "video": ["huongdantai-androi", "trade-vn","loan-vn"]
+        "video": ["huongdantai-androi", "trade-vn", "loan-vn"]
 
     }, {
         "image": ["taixuong-androi", "taixuong-androi-hover"]
-    },{
-        "contact" : ["(+84) 906 097 525", "Saigon, Vietnam","https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
+    }, {
+        "contact": ["(+84) 906 097 525", "Saigon, Vietnam", "https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
     }];
 //  english
 var db_en = [
@@ -101,34 +101,38 @@ var db_en = [
                 " Lender Sends the loan.", " Borrower Repays the loan.", " Lender Releases.",
                 "CONTACT US", "ToS", "PRIVACY"]
     }, {
-        "video": ["Instruction", "trade-en","loan-en"]
+        "video": ["Instruction", "trade-en", "loan-en"]
 
     }, {
         "image": ["google", "app-store-android"]
-    },{
-        "contact" : ["(+1)(617) 863-7286", "Boston, MA, USA","https://t.me/StiBenglish","https://www.facebook.com/StiBLabs/"]
+    }, {
+        "contact": ["(+1)(617) 863-7286", "Boston, MA, USA", "https://t.me/StiBenglish", "https://www.facebook.com/StiBLabs/"]
     }];
 //  get Ip location Viet Nam to set languages
-$.getJSON('https://freegeoip.app/json/', function (data) {
+// $.getJSON('https://freegeoip.app/json/', function (data) {
 
-  console.log(data)
-    if (data.country_name == "Vietnam") {
-        $("#body_content").empty().html(body(db_vn));
-        $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
-        $(".btnVnLang").addClass("lang-active") ;   
-      
-    } else {
-        $("#body_content").empty().html(body(db_en))
-        $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");     
-        $(".btnEngLang").addClass("lang-active")  ;    
-    }
+//     console.log(data)
+//     if (data.country_name == "Vietnam") {
+//         $("#body_content").empty().html(body(db_vn));
+//         $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
+//         $(".btnVnLang").addClass("lang-active");
 
-});
+//     } else {
+//         $("#body_content").empty().html(body(db_en))
+//         $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
+//         $(".btnEngLang").addClass("lang-active");
+//     }
+
+// });
+
+fetch('https://freegeoip.app/json/')
+    .then(res => res.json())
+    .then(json => console.log(json))
 
 //  set languages
 function body(db) {
     var body_vn =
-    `<div class="header" id="header">
+        `<div class="header" id="header">
     <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
         <div class="logo" id="logo-header">
             <a href="https://stib.co/" >  <img src="images/svg/logo.svg" style="width: auto; height: 27px" />  </a>
@@ -185,7 +189,7 @@ function body(db) {
                 </div>
                 <h1 class="line-after">Simply a better digital
                     exchange</h1>
-                <p class="sub-title" style="color: #333; font-style: italic; font-weight: bold;">`+db[1].title[0] + `</p>
+                <p class="sub-title" style="color: #333; font-style: italic; font-weight: bold;">`+ db[1].title[0] + `</p>
                 <ul class="list-service">
                     <li><i class="fas fa-check"></i> <span>`+ db[1].title[1] + `</span></li>
                     <li><i class="fas fa-check"></i> <span>`+ db[1].title[2] + `</span></li>
@@ -595,12 +599,12 @@ function body(db) {
         <span> <a href="https://stib.co/index.php?showpage=privacy">`+ db[4].step[12] + `</a> </span>
     </div>
 </div>`;
-// /////////////////////////////////////////////////////////////////////////////////////////////
-//  index.js after 
+    // /////////////////////////////////////////////////////////////////////////////////////////////
+    //  index.js after 
     $(document).ready(function () {
         function getDeviceName() {
             var deviceName = '';
-    
+
             var isMobile = {
                 Android: function () {
                     return navigator.userAgent.match(/Android/i);
@@ -630,7 +634,7 @@ function body(db) {
                     return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
                 }
             };
-    
+
             if (isMobile.Datalogic())
                 deviceName = 'Datalogic';
             else if (isMobile.Bluebird())
@@ -647,10 +651,10 @@ function body(db) {
                 deviceName = 'Android';
             else if ((deviceName == '') && (isMobile.Windows()))
                 deviceName = 'Windows';
-    
+
             return deviceName;
         }
-    
+
         function setDisplay() {
             var device = getDeviceName();
             // console.log(getDeviceName());
@@ -661,7 +665,7 @@ function body(db) {
                 $('#android-mockup-img').css({ "display": "none" });
                 $('#iphone-mockup-img').css({ "display": "inline" });
                 $('.wrapper-content-animation').addClass('ios-display');
-    
+
                 $('.available-ios').addClass('ios-display');
                 $('.wrapper-link-ios').addClass('ios-display');
                 $('.wrapper-link-android').addClass('ios-display');
@@ -678,7 +682,7 @@ function body(db) {
             else if (device == 'Android') { // tren Android
                 $('#android-mockup-img').css({ "display": "inline" });
                 $('#iphone-mockup-img').css({ "display": "none" });
-    
+
                 $('.available-android').addClass('android-display');
                 $('.wrapper-link-android').addClass('android-display');
                 $('.wrapper-link-ios').addClass('android-display');
@@ -689,22 +693,22 @@ function body(db) {
             }
         }
         setDisplay();
-        var flag_show_lang = true ;
+        var flag_show_lang = true;
         var flag;
-      
-        $(".btn-current-lang").click(function(){   
-       if(flag_show_lang==true){
-        $(".fa-greater-than").addClass("rotatory");
-        flag_show_lang = false;
-       }  else{
-        $(".fa-greater-than").removeClass("rotatory");
-        flag_show_lang = true ;
-       }
-          $(".dual-lang").slideToggle("slow");            
+
+        $(".btn-current-lang").click(function () {
+            if (flag_show_lang == true) {
+                $(".fa-greater-than").addClass("rotatory");
+                flag_show_lang = false;
+            } else {
+                $(".fa-greater-than").removeClass("rotatory");
+                flag_show_lang = true;
+            }
+            $(".dual-lang").slideToggle("slow");
         })
-       
+
         $(".btnEngLang").click(function (event) {
-            event.preventDefault();       
+            event.preventDefault();
             $("#body_content").empty().html(body(db_en));
             $(".btnVnLang").removeClass("lang-active");
             $(".btnEngLang").addClass("lang-active");
@@ -719,7 +723,7 @@ function body(db) {
             $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
             setDisplay();
         });
-        
+
         // var media = $('.video-tut').get(0);
         // $('#modelId').on('hide.bs.modal', function () {
         //     var videoAttr = $('#source-video').attr("src");
@@ -753,7 +757,7 @@ function body(db) {
             var distance3 = distance + 250;
             var header_top = $('#header').offset().top + 60;
 
-            if (vitrihientai > circle1 + 60 ) {
+            if (vitrihientai > circle1 + 60) {
                 $('#header').addClass('bg-active');
                 $('#logo-header').addClass('active');
             }
@@ -834,7 +838,7 @@ function body(db) {
 
                 $('.sub_menu, #icon_menu_close').removeClass('active');
             }
-    
+
             $('html, body').animate({ scrollTop: $('#downloadId').offset().top }, 500);
         })
         $('#n2').click(function (event) {
@@ -842,7 +846,7 @@ function body(db) {
             if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
                 $('.sub_menu, #icon_menu_close').removeClass('active');
             }
-         
+
             $('html, body').animate({ scrollTop: $('#show').offset().top - 60 }, 500);
         })
         $('#n3').click(function (event) {
