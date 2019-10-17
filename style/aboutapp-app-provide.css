@@ -135,7 +135,7 @@
     transition: .3s;
 }
 
-.about_app .content ul li a:hover {
+.about_app .content ul .charity a:hover {
     text-decoration: none;
     color: #f38320;
     background: transparent;

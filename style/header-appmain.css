@@ -17,20 +17,32 @@
     top: 300px;
     right: 1px;
 }
+.logo .fa-greater-than{
+    font-weight: bold;
+    position: absolute;
+    bottom: 5px;
+    right: -9px;
+    font-size: 7px;
+    transform: scaleY(1.9);
+}
+.circle1 .fa-greater-than{
+    font-weight: bold;
+    position: absolute;
+    bottom: 7.7px;
+    right: -11px;
+    font-size: 9px;
+    transform: scaleY(1.9);
+}
 .rotatory{
-    -webkit-transform: rotate(90deg) scale(0.8) translateX(3px);
-        -ms-transform: rotate(90deg) scale(0.8) translateX(3px);
-            transform: rotate(90deg) scale(0.8) translateX(3px);
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    
- 
+    font-size: 6px;
+    -webkit-transform: rotate(90deg) scaleY(2) ;
+        -ms-transform: rotate(90deg) scaleY(2) ;
+            transform: rotate(90deg) scaleY(2) translateY(-1px)!important ;   
 }
 
 a.lang {
-
-    padding: 5px 13px;
+font-weight: bolder;
+    padding: 5px 16px;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
@@ -38,12 +50,21 @@ a.lang {
     border-right: none;
    
 }
-.lang-active {
-    color: #f38320!important;
-    display: block!important;
-     
+.dual-lang .fa-check{
+ opacity: 0;
 }
-
+.dual-lang a.lang:hover .fa-check{
+    opacity: 1;;
+}
+a.lang:hover{
+    opacity: 0.5;
+}
+.lang-active {
+   opacity: 0.5;    
+}
+.lang-active .fa-check{
+    opacity: 1!important;
+}
 
 a.eng {
     border-bottom: none!important;
@@ -56,21 +77,23 @@ a.eng {
 }
 .logo .btn-current-lang{
     position: absolute;
-    bottom: -4px;
-    right: -32px
+    bottom: -3px;
+    right: -17px
 }
 .circle1 .dual-lang {
+    font-size: 12px;
     position: absolute;
     top: 157px;
-    right: -30px;
+    right: -46px;
   z-index: 2;
   border: #95a5a6 solid 1px;
   background-color:white;
 }
 .logo .dual-lang{
+    font-size: 12px;
     position: absolute;
-    top: 48px;
-    right: -47px;
+    top: 41px;
+    right: -37px;
     z-index: 2;
     border: #95a5a6 solid 1px;
     background-color:white;
@@ -254,7 +277,7 @@ iframe.ios-display {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    padding-left: 130px;
+    padding-left: 15px;
     padding-right: 20px;
     -webkit-box-align: center;
     -ms-flex-align: center;

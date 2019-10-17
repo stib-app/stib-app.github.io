@@ -47,9 +47,9 @@ var db_vn = [
         "video": ["huongdantai-androi", "trade-vn", "loan-vn"]
 
     }, {
-        "image": ["taixuong-androi", "taixuong-androi-hover"]
+        "image": ["taixuong-androi", "taixuong-androi-hover","taixuong-ios","taixuong-ios-hover"]
     }, {
-        "contact": ["(+84) 906 097 525", "Saigon, Vietnam", "https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
+        "contact": ["(+84) 906 097 525", "Saigon, Vietnam", "https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?"]
     }];
 //  english
 var db_en = [
@@ -104,7 +104,7 @@ var db_en = [
         "video": ["Instruction", "trade-en", "loan-en"]
 
     }, {
-        "image": ["google", "app-store-android"]
+        "image": ["google", "app-store-android","apk-ios","apk-ios-hover"]
     }, {
         "contact": ["(+1)(617) 863-7286", "Boston, MA, USA", "https://t.me/StiBenglish", "https://www.facebook.com/StiBLabs/"]
     }];
@@ -121,7 +121,7 @@ fetch('https://freegeoip.app/json/')
         if (country_code === 'VN') {
             $("#body_content").empty().html(body(db_vn))
             $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
-            $(".btnEngLang").addClass("lang-active");
+            $(".btnVnLang").addClass("lang-active");
         } else {
             $("#body_content").empty().html(body(db_en))
             $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
@@ -142,18 +142,14 @@ function body(db) {
         `<div class="header" id="header">
     <div class="container_header  d-flex flex-row align-items-center justify-content-space-between ">
         <div class="logo" id="logo-header">
-            <a href="https://stib.co/" >  <img src="images/svg/logo.svg" style="width: auto; height: 27px" />  </a>
-            <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer;font-size: 10px; ; "> </div>
-
+            <a href="https://stib.co/" >  <img src="images/svg/logo.svg" style="width: 83px; height: 35px" />  </a>
+                 <div class="btn-current-lang" id="btn-current-lang" style="cursor: pointer;font-size: 12px; font-weight:bolder; ; "> </div>
                 <div class="dual-lang" style="display: none">
                 <div class="lang-option d-flex flex-column" >
                 <a  href="#" class="vn lang btnVnLang ">VN <i class="fas fa-check"></i> </a>
                 <a  href="#" class="eng lang btnEngLang "> EN <i class="fas fa-check"></i></a>	
                 </div>
-                </div>
-              
-                
-          
+                </div>                
         </div>
         <div></div>
         <!-- icon for reponsive mobile open menu -->
@@ -184,7 +180,7 @@ function body(db) {
                 <div class="circle d-flex justify-content-center">
                     <div class="circle1">
                     <img src="images/svg/logo.svg" alt="">
-                    <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer"> </div>
+                    <div class="btn-current-lang" id="btn-current-lang" style="cursor: pointer;font-weight:bolder"> </div>
                     <div class="dual-lang" style="display: none">
                
                           <div class="lang-option d-flex flex-column" >
@@ -233,11 +229,11 @@ function body(db) {
                         </div>
                         <div class="wrapper-link-ios" style="position: relative;">
                             <a
-                                href="#">
+                                href="https://testflight.apple.com/join/3NpiP8PC" target="_blank" >
                                 <img class="btn-ios" width="200" height="auto"
-                                    src="images/background/apk-ios.png">
+                                    src="images/background/`+ db[6].image[2] + `.png">
                                 <img class="btn-ios-hover" width="200" height="auto"
-                                    src="images/background/apk-ios-hover.png">
+                                    src="images/background/`+ db[6].image[3] + `.png">
                             </a>
                             <div class="wrapper btn-video">
                                 <button type="button" class="video-btn rounded-circle" data-toggle="modal"
@@ -249,7 +245,7 @@ function body(db) {
                                 </button>
                             </div>
                             <div class="qr-wrapper" style="z-index:2; background-color: white" >
-                                <img src="images/background/coming-soon-PNG.png" alt="" class="img-fluid">
+                                <img src="images/background/ipa.png" alt="" class="img-fluid">
                             </div>
                         </div>
                         <!-- Modal -->
@@ -328,7 +324,7 @@ function body(db) {
     </div>
     <div class="content d-flex justify-content-center container">
         <ul class="row  ">
-            <li class="col-md-6 col-lg-3">
+            <li class="col-md-6 col-lg-3 charity">
                 <div class="icon">
                     <img src="images/background/p2p.png" />
                 </div>
@@ -340,7 +336,7 @@ function body(db) {
                     <a href="#" target="_blank"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
-            <li class="col-md-6 col-lg-3">
+            <li class="col-md-6 col-lg-3 charity">
                 <div class="icon">
                     <img src="images/background/charity (1).png" />
                 </div>
