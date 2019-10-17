@@ -40,6 +40,11 @@
 
 
 	</div>
+
+	<script>
+		$.get("https://ipinfo.io", function (response) { console.log(response.city, response.country); }, "jsonp");
+	</script>
+
 	<!-- end of page holder -->
 	<!-- ---------------------------------------------------------------------------- -->
 
@@ -51,11 +56,6 @@
 
 	<script type="text/javascript" src="javascript/languages.js"></script>
 	<!-- <script type="text/javascript" src="javascript/index.js"></script> -->
-
-	<script>
-		$.get("https://ipinfo.io", function (response) { console.log(response.city, response.country); }, "jsonp");
-	</script>
-
 </body>
 
 </html>
