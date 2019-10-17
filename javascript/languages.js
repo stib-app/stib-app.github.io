@@ -178,7 +178,7 @@ function body(db) {
     <div class="container">
         <div class="box row">
             <div class="app_sub col-lg-6 col-md-6 col-12">
-                <div class="circle">
+                <div class="circle d-flex justify-content-center">
                     <div class="circle1">
                     <img src="images/svg/logo.svg" alt="">
                     <div class="btn-current-lang lang-active" id="btn-current-lang" style="cursor: pointer"> </div>
