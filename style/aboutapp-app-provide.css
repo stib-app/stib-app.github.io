@@ -85,6 +85,7 @@
     padding-top: 30px;
     text-transform: uppercase;
 }
+@media(min-width: 765px){
 
 .about_app .content ul li:hover {
     -webkit-box-shadow: 0 0 35px rgba(0, 0, 0, .1);
@@ -93,7 +94,7 @@
         -ms-transform: translateY(-7px);
             transform: translateY(-7px);
 }
-
+}
 .about_app .content .icon {
     padding-bottom: 40px;
     padding: 10px;
@@ -326,9 +327,7 @@
     }
 }
 @media(max-width: 767px) {
-    .about_app .content ul li:not(:last-child) {
-        border-bottom: 1px solid #F38320;
-    }
+    
 }
 @media (max-width: 435px){
     .about_app .title, .app_provide .title{

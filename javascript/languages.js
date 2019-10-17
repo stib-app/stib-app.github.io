@@ -17,7 +17,7 @@ var db_vn = [
     {
         "about":
             ["Giới thiệu StiB Apps",
-                "THIẾT KẾ, PHÁT TRIỂN VÀ PHI TẬP TRUNG CHO MỌI NGƯỜI VỚI NHỮNG TÍNH NĂNG ĐỘC NHẤT",
+                "THIẾT KẾ, PHÁT TRIỂN SÀN PHI TẬP TRUNG CHO MỌI NGƯỜI VỚI NHỮNG TÍNH NĂNG ĐỘC NHẤT",
 
                 "StiB P2P",
                 "Giao dịch và vay cũng như bảo hiểm và đầu tư với global P2P networks của chúng tôi",
@@ -30,7 +30,7 @@ var db_vn = [
     },
     {
         "why":
-            ["TẠI SAO NÊN GIAO DỊCH/VAY TRÊN HỢP ĐỒNG THÔNG MINH StiB?", "KHÔNG PHÍ GIAO DỊCH",
+            ["Tại Sao Nên Giao Dịch Trên Hợp Đồng Thông Minh StiB?", "KHÔNG PHÍ GIAO DỊCH",
                 "Luôn luôn miễn phí giao dịch với Hợp Đồng Thông Minh StiB vì những rủi ro sẽ thuộc về bạn và những người khác!",
                 "CHIA SẺ LỢI NHUẬN", "Chúng tôi chia sẻ lợi nhuận cũng như tiền lãi với StiB Reserves thông qua đối tác.",
                 "BẢO VỆ PHÁP LÝ", "Bảo vệ người giao dịch/khách hàng với StiB Legals bao gồm luật sư trong nước và quốc tế.",
@@ -38,8 +38,8 @@ var db_vn = [
     },
     {
         "step":
-            ["GIAO DỊCH P2P", "Bước", " Người bán gửi đến Hợp Đồng Thông Minh StiB", " Người mua gửi tiền",
-                " Người bán giải phóng", "VAY MƯỢN P2P", " Người vay gửi tiền đến Hợp Đồng Thông Minh StiB",
+            ["MUA/BÁN P2P", "Bước", " Người bán gửi đến Hợp Đồng Thông Minh StiB", " Người mua gửi tiền",
+                " Người bán giải phóng", "CHO VAY/MƯỢN P2P", " Người vay gửi tiền đến Hợp Đồng Thông Minh StiB",
                 " Người cho vay gửi khoản vay", " Người vay trả tiền vay", " Người cho vay giải phóng",
                 "LIÊN HỆ", "ĐIỀU KHOẢN", "BẢO MẬT"]
     },
@@ -49,7 +49,7 @@ var db_vn = [
     }, {
         "image": ["taixuong-androi", "taixuong-androi-hover"]
     },{
-        "contact" : ["(+84) 906 097 525", "Sg,Viet Nam","https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
+        "contact" : ["(+84) 906 097 525", "Saigon, Vietnam","https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?fref=search&__tn__=%2Cd%2CP-R&eid=ARDUostO1lX8WAmIX_-jqEmkdeKpmCP-hnOIR-wgLeb83JPqLUNby9UdwP0q8OW4BcGqduupN7HsM9xe"]
     }];
 //  english
 var db_en = [
@@ -148,7 +148,7 @@ function body(db) {
             <i class="fas fa-bars fa-2x" style="color: #ff9f1a; font-size: 20px;" id="icon_menu1"></i>
         </div>
         <div id="icon_menu_close">
-            <img src="images/svg/cross-out.svg" alt="" class="img-fluid">
+            <img src="images/svg/cross-out.svg" alt="" class="img-fluid" style="max-width: 80%;">
         </div>
         <!-- menu -->
         <div class="sub_menu" id="change-color">
@@ -261,12 +261,16 @@ function body(db) {
                             </div>
                         </div>
                     </div>
+                    <a  href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" >
+                   
                     <div class="available-ios">
-                        <p>`+ db[1].title[6] + `</p>
+                        <p >`+ db[1].title[6] + `</p>
                     </div>
+                    </a>
                     <div class="available-android">
                         <p>`+ db[1].title[7] + `</p>
                     </div>
+                    
                 </div>
             </div>
             <div class="app_photo col-lg-6 col-md-6 col-12">
@@ -849,6 +853,7 @@ function body(db) {
     });
     return body_vn;
 };
+
 
 
 
