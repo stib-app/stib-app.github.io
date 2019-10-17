@@ -42,7 +42,9 @@
 	</div>
 
 	<script>
-		$.get("https://ipinfo.io", function (response) { console.log(response.city, response.country); }, "jsonp");
+		fetch('https://ipinfo.io/')
+		.then(res => res.json())
+		.then(json => console.log(json))
 	</script>
 
 	<!-- end of page holder -->
