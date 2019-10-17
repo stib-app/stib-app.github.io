@@ -108,6 +108,9 @@ var db_en = [
     }, {
         "contact": ["(+1)(617) 863-7286", "Boston, MA, USA", "https://t.me/StiBenglish", "https://www.facebook.com/StiBLabs/"]
     }];
+
+$.get("https://ipinfo.io", function (response) { console.log(response.city, response.country); }, "jsonp");
+
 //  get Ip location Viet Nam to set languages
 $.getJSON('https://ipinfo.io/', function (data) {
 
@@ -124,9 +127,6 @@ $.getJSON('https://ipinfo.io/', function (data) {
     }
 
 });
-
-
-$.get("https://ipinfo.io", function (response) { console.log(response.city, response.country); }, "jsonp");
 
 //  set languages
 function body(db) {
