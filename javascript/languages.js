@@ -349,7 +349,7 @@ function body(db) {
                 </div>
                 <div class="learn-more">
               
-                    <a href="" style=" cursor: not-allowed" title="comming soon"> `+ db[2].about[10] + `</a>
+                    <a href="" style=" cursor: not-allowed" title="Coming Soon"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
             <li class="col-md-6 col-lg-3">
@@ -360,7 +360,7 @@ function body(db) {
                     <h4>S<span style="text-transform: lowercase!important;">ti</span>B AI</h4>
                     <p>`+ db[2].about[9] + `<br>&emsp;</p>
                 </div>
-                <div class="learn-more" title="comming soon" >
+                <div class="learn-more" title="Coming Soon" >
                     <a href=""  style="cursor: not-allowed" > `+ db[2].about[10] + `</a>
                 </div>
             </li>
