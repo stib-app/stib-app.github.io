@@ -109,25 +109,21 @@ var db_en = [
         "contact": ["(+1)(617) 863-7286", "Boston, MA, USA", "https://t.me/StiBenglish", "https://www.facebook.com/StiBLabs/"]
     }];
 //  get Ip location Viet Nam to set languages
-// $.getJSON('https://freegeoip.app/json/', function (data) {
+$.getJSON('https://ipinfo.io/', function (data) {
 
-//     console.log(data)
-//     if (data.country_name == "Vietnam") {
-//         $("#body_content").empty().html(body(db_vn));
-//         $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
-//         $(".btnVnLang").addClass("lang-active");
+    console.log(data)
+    if (data.country == "Vietnam") {
+        $("#body_content").empty().html(body(db_vn));
+        $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
+        $(".btnVnLang").addClass("lang-active");
 
-//     } else {
-//         $("#body_content").empty().html(body(db_en))
-//         $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
-//         $(".btnEngLang").addClass("lang-active");
-//     }
+    } else {
+        $("#body_content").empty().html(body(db_en))
+        $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
+        $(".btnEngLang").addClass("lang-active");
+    }
 
-// });
-
-fetch('https://ipinfo.io/')
-    .then(res => res.json())
-    .then(json => console.log(json))
+});
 
 //  set languages
 function body(db) {
