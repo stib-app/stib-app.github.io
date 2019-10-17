@@ -125,9 +125,9 @@ var db_en = [
 
 // });
 
-fetch('https://freegeoip.app/json/')
-    .then(res => res.json())
-    .then(json => console.log(json))
+const response = await fetch('https://freegeoip.app/json/');
+const myJson = await response.json();
+console.log(JSON.stringify(myJson));
 
 //  set languages
 function body(db) {
