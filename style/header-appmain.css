@@ -78,7 +78,8 @@ a.eng {
 .logo .btn-current-lang{
     position: absolute;
     bottom: -3px;
-    right: -17px
+    right: -17px;
+    color: black
 }
 .circle1 .dual-lang {
     font-size: 12px;
@@ -716,6 +717,9 @@ ul.list-service li i {
 
 @media (max-width:1000px) {
   
+.circle1 .btn-current-lang {
+    opacity: 0;
+}
     .main_app .app_sub {
         max-width: 100%;
         -webkit-box-flex: 0;
@@ -923,8 +927,11 @@ ul.list-service li i {
 
 @media (max-width: 769px) {
     .main_app {
-        height: 600px;
+        padding-top: 100px;
+        height: auto;
+        padding-bottom: 50px;
     }
+    
 }
 
 @media(max-width: 700px) {

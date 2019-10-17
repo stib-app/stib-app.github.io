@@ -180,7 +180,7 @@ function body(db) {
                 <div class="circle d-flex justify-content-center">
                     <div class="circle1">
                     <img src="images/svg/logo.svg" alt="">
-                    <div class="btn-current-lang" id="btn-current-lang" style="cursor: pointer;font-weight:bolder"> </div>
+                    <div class="btn-current-lang" id="btn-current-lang" style="cursor: pointer;font-weight:bolder;color: black"> </div>
                     <div class="dual-lang" style="display: none">
                
                           <div class="lang-option d-flex flex-column" >
@@ -270,15 +270,17 @@ function body(db) {
                             </div>
                         </div>
                     </div>
-                    <a  href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" >
+                    <a  href="https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p" target="_blank" >
                    
                     <div class="available-ios">
                         <p >`+ db[1].title[6] + `</p>
                     </div>
                     </a>
+                    <a  href="https://testflight.apple.com/join/3NpiP8PC" target="_blank"  >
                     <div class="available-android">
                         <p>`+ db[1].title[7] + `</p>
                     </div>
+                    </a>
                     
                 </div>
             </div>
@@ -476,7 +478,7 @@ function body(db) {
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe> -->
                                         <video id="video-trade" muted="muted" loop playsinline autoplay >
-                                        <source src="images/video/buy-apk.mp4" type = "video/mp4">
+                                        <source src="images/video/`+ db[5].video[1] + `.mp4" type = "video/mp4">
                                             <source src="images/video/sell-apk.ogg" type = "video/ogg">
                                             <source src="images/video/sell-apk.webm" type = "video/webm">
                                             This browser doesn't support video tag.
@@ -507,7 +509,7 @@ function body(db) {
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe> -->
                                             <video id="video-lend" muted="muted" loop playsinline autoplay >
-                                            <source src="images/video/loan-apk.mp4" type = "video/mp4">
+                                            <source src="images/video/`+ db[5].video[2] + `.mp4" type = "video/mp4">
                                             <source src="images/video/borrow-apk.mp4" type = "video/mp4">
                                                 This browser doesn't support video tag.
                                             </video>
@@ -779,11 +781,7 @@ function body(db) {
             var videoTrade = document.getElementById('video-trade');
             var videoLend = document.getElementById('video-lend');
             if (vitrihientai > $('.dowload').offset().top - 300) {
-
-                if (flag == true) {
-                    videoTrade.play();
-                    flag = false;
-                }
+                    videoTrade.play();               
             }
             else {
                 videoTrade.pause();
@@ -791,11 +789,7 @@ function body(db) {
             }
 
             if (vitrihientai > $('#page2Id').offset().top - 300) {
-
-                if (flag == true) {
-                    videoLend.play();
-                    flag = false;
-                }
+                    videoLend.play();                   
             }
             else {
                 videoLend.pause();
