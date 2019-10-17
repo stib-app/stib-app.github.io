@@ -18,7 +18,11 @@
     right: 1px;
 }
 .rotatory{
-    transform: rotate(90deg) scale(0.8) translateX(3px);
+    -webkit-transform: rotate(90deg) scale(0.8) translateX(3px);
+        -ms-transform: rotate(90deg) scale(0.8) translateX(3px);
+            transform: rotate(90deg) scale(0.8) translateX(3px);
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     
  
@@ -317,6 +321,8 @@ iframe.ios-display {
 }
 .circle1{
     position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 .circle1 img {
