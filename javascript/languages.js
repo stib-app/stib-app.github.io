@@ -326,6 +326,7 @@ function body(db) {
     </div>
     <div class="content d-flex justify-content-center container">
         <ul class="row  ">
+    
             <li class="col-md-6 col-lg-3 charity">
                 <div class="icon">
                     <img src="images/background/p2p.png" />
@@ -338,6 +339,7 @@ function body(db) {
                     <a href="#" target="_blank"> `+ db[2].about[10] + `</a>
                 </div>
             </li>
+            
             <li class="col-md-6 col-lg-3 charity">
                 <div class="icon">
                     <img src="images/background/charity (1).png" />
@@ -755,14 +757,13 @@ function body(db) {
             var header_top = $('#header').offset().top + 60;
 
             var vitrihientai = window.pageYOffset;
-            var circle1 = $(".circle1").offset().top + $(".circle1").outerHeight(true);
+            var circle1 = $(".circle1").offset().top ;
             var page1 = $('#page1').offset().top;
             var page2 = page1 + $("#page1").outerHeight(true);
             var distance = $('#show').offset().top;
             var distance3 = distance + 250;
             var header_top = $('#header').offset().top + 60;
-
-            if (vitrihientai > circle1 + 60) {
+            if (vitrihientai > circle1  ) {
                 $('#header').addClass('bg-active');
                 $('#logo-header').addClass('active');
             }

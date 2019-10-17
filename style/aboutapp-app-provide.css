@@ -75,6 +75,7 @@
     -o-transition: 0.3s;
     transition: 0.3s;
     position: relative;
+    cursor: pointer;
 }
 
 .about_app .content ul h4 {
@@ -133,6 +134,7 @@
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
+    border-radius: 3px;
 }
 
 .about_app .content ul .charity a:hover {

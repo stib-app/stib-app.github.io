@@ -945,6 +945,7 @@ ul.list-service li i {
         padding: 0px
     }
     .store a {
+        text-decoration: underline;
         margin: 0px
     }
     .store .store_app {
