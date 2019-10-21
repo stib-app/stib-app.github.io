@@ -1,4 +1,4 @@
-//  Vietnamese
+//  Vietnamese languages
 
 var db_vn = [
 
@@ -53,7 +53,7 @@ var db_vn = [
     }, {
         "contact": ["(+84) 906 097 525", "Saigon, Vietnam", "https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam"]
     }];
-//  english
+//  english languages
 var db_en = [
 
     { "header": ["DOWNLOAD", "WHY StiB?", "CONTACT US"] },
@@ -113,9 +113,6 @@ var db_en = [
 
 //  get Ip location Viet Nam to set languages
 
-
-var time_load = 1 ;
-
 fetch('https://freegeoip.app/json/')
     .then(res => res.json())
     .then(json => {
@@ -138,7 +135,7 @@ fetch('https://freegeoip.app/json/')
     })
 
 
-//  set languages
+
 function body(db) {
     var body_vn =
         `<div class="header" id="header">
@@ -365,7 +362,9 @@ function body(db) {
                 </div>
                 <div class="learn-more">
               
-                    <a href="" style=" cursor: not-allowed" > `+ db[2].about[11] + `</a>
+                    <a href="" style=" cursor: not-allowed ;text-decoration: none;
+                    color: #f38320;background: transparent;
+                    border: 1px solid #f38320;" > `+ db[2].about[11] + `</a>
                 </div>
             </li>
             <li class="col-md-6 col-lg-3">
@@ -377,7 +376,10 @@ function body(db) {
                     <p>`+ db[2].about[9] + `<br>&emsp;</p>
                 </div>
                 <div class="learn-more">
-                    <a href=""  style="cursor: not-allowed" > `+ db[2].about[11] + `</a>
+                    <a href=""  style="cursor: not-allowed;text-decoration: none;
+                    color: #f38320;
+                    background: transparent;
+                    border: 1px solid #f38320;" > `+ db[2].about[11] + `</a>
                 </div>
             </li>
         </ul>
@@ -709,7 +711,9 @@ function body(db) {
         setDisplay();
         var flag_show_lang = true;
         var flag;
-    
+        //  call function slide image in bootstrap 
+        $('.carousel').carousel()
+        //  show option languages
         $(".btn-current-lang").click(function () {
             if (flag_show_lang == true) {
                 $(".fa-greater-than").addClass("rotatory");
@@ -720,7 +724,7 @@ function body(db) {
             }
             $(".dual-lang").slideToggle("slow");
         })
-    
+    //  change to English language
         $(".btnEngLang").click(function (event) {
             event.preventDefault();
             $("#body_content").empty().html(body(db_en));
@@ -729,6 +733,7 @@ function body(db) {
             $(".btn-current-lang").html("EN <i class='fas fa-greater-than'></i>");
             setDisplay();
         });
+        //  change to VIetnamese language
         $(".btnVnLang").click(function () {
             event.preventDefault();
             $("#body_content").empty().html(body(db_vn));
@@ -744,13 +749,14 @@ function body(db) {
         //     $('#source-video').attr("src", "");
         //     $('#source-video').attr("src", videoAttr);
         // }) ;
-        const menu1 = $('.dual-lang');
-    
+        //  hide option Languages when click to outside of option
+        const menu1 = $('.dual-lang');   
         $(document).mouseup(e => {
          if(menu1.has(e.target).length == 0){
             menu1.slideUp()
          }    
          });
+        
         var videoTut = document.getElementById('video-tut');
         $('#modelId').on('hide.bs.modal', function () {
             videoTut.pause();
