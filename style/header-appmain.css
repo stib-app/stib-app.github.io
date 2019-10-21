@@ -899,7 +899,7 @@ ul.list-service li i {
         color: #ff9f1a
     }
     .circle {
-        display: none
+        display: none!important
     }
     .qr-wrapper {
         display: none;

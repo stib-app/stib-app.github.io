@@ -1,4 +1,5 @@
 //  Vietnamese
+
 var db_vn = [
 
     { "header": ["TẢI XUỐNG", "TẠI SAO StiB?", "LIÊN HỆ"] },
@@ -6,10 +7,10 @@ var db_vn = [
         "title":
             [
                 "Giao Dịch (mua/bán + cho vay/mượn) P2P trên Hợp Đồng Thông Minh StiB",
-                "Miễn phí Giao Dịch",
+                "Miễn Phí Giao Dịch",
                 "Bảo Vệ Pháp Lý",
                 "Chia Sẻ Lợi Nhuận",
-                "Đơn giản và đẹp mắt với các tính năng tuyệt vời",
+                "Đơn Giản Và Đẹp Mắt Với Các Tính Năng Tuyệt Vời",
                 "Hướng dẫn",
                 "Có phiên bản cho Android!",
                 "Có phiên bản cho iOS!"]
@@ -26,7 +27,8 @@ var db_vn = [
                 "StiB REWARDS",
                 "Tặng cho đối tác mã giảm giá và những phần thưởng qua những giao dịch như cho vay, vay, đầu tư, bảo hiểm...",
                 "StiB AI",
-                "Chúng tôi sẽ bắt đầu sử dụng Trí Tuệ Nhân Tạo với AI Chat để hỗ trợ giao dịch và cho vay", "TÌM HIỂU THÊM"]
+                "Chúng tôi sẽ bắt đầu sử dụng Trí Tuệ Nhân Tạo với AI Chat để hỗ trợ giao dịch và cho vay",
+                 "TÌM HIỂU THÊM","SẮP RA MẮT"]
     },
     {
         "why":
@@ -49,7 +51,7 @@ var db_vn = [
     }, {
         "image": ["taixuong-androi", "taixuong-androi-hover","taixuong-ios","taixuong-ios-hover"]
     }, {
-        "contact": ["(+84) 906 097 525", "Saigon, Vietnam", "https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam?"]
+        "contact": ["(+84) 906 097 525", "Saigon, Vietnam", "https://t.me/StiBvietnam", "https://www.facebook.com/stibvietnam"]
     }];
 //  english
 var db_en = [
@@ -80,7 +82,7 @@ var db_en = [
                 "For spending at our partners on deep discounts and earn rewards through your trading, lending, investing, insuring, etc ...",
                 "StiB AI",
                 "We will initially begin Artificial Intelligence with AI Chat to assist with trading and lending",
-                "LEARN MORE"]
+                "LEARN MORE", "COMING SOON"]
     },
     {
         "why":
@@ -112,14 +114,14 @@ var db_en = [
 //  get Ip location Viet Nam to set languages
 
 
-
+var time_load = 1 ;
 
 fetch('https://freegeoip.app/json/')
     .then(res => res.json())
     .then(json => {
         const { country_code } = json;
         if (country_code === 'VN') {
-            $("#body_content").empty().html(body(db_vn))
+            $("#body_content").empty().html(body(db_vn))        
             $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
             $(".btnVnLang").addClass("lang-active");
         } else {
@@ -261,7 +263,8 @@ function body(db) {
                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                     allowfullscreen></iframe> -->
                                                     <video id="video-tut" autoplay muted="muted" loop playsinline >
-                                                  <source src="images/video/`+ db[5].video[0] + `.mp4" type = "video/mp4"> 
+                                                  
+                                                  <source src="images/video/`+ db[5].video[0] + `.ogg" type = "video/ogg"> 
                                                     This browser doesn't support video tag.
                                                 </video>
                                         </div>
@@ -362,7 +365,7 @@ function body(db) {
                 </div>
                 <div class="learn-more">
               
-                    <a href="" style=" cursor: not-allowed" title="Coming Soon"> `+ db[2].about[10] + `</a>
+                    <a href="" style=" cursor: not-allowed" > `+ db[2].about[11] + `</a>
                 </div>
             </li>
             <li class="col-md-6 col-lg-3">
@@ -373,8 +376,8 @@ function body(db) {
                     <h4>S<span style="text-transform: lowercase!important;">ti</span>B AI</h4>
                     <p>`+ db[2].about[9] + `<br>&emsp;</p>
                 </div>
-                <div class="learn-more" title="Coming Soon" >
-                    <a href=""  style="cursor: not-allowed" > `+ db[2].about[10] + `</a>
+                <div class="learn-more">
+                    <a href=""  style="cursor: not-allowed" > `+ db[2].about[11] + `</a>
                 </div>
             </li>
         </ul>
@@ -480,9 +483,9 @@ function body(db) {
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe> -->
                                         <video id="video-trade" muted="muted" loop playsinline autoplay >
-                                        <source src="images/video/`+ db[5].video[1] + `.mp4" type = "video/mp4">
-                                            <source src="images/video/sell-apk.ogg" type = "video/ogg">
-                                            <source src="images/video/sell-apk.webm" type = "video/webm">
+                                        <source src="images/video/`+ db[5].video[1] + `.ogg" type = "video/ogg">
+                                     
+
                                             This browser doesn't support video tag.
                                         </video>
                                     </div>
@@ -511,8 +514,9 @@ function body(db) {
                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe> -->
                                             <video id="video-lend" muted="muted" loop playsinline autoplay >
-                                            <source src="images/video/`+ db[5].video[2] + `.mp4" type = "video/mp4">
-                                            <source src="images/video/borrow-apk.mp4" type = "video/mp4">
+                                            <source src="images/video/`+ db[5].video[2] + `.ogg" type = "video/ogg">
+                                          
+
                                                 This browser doesn't support video tag.
                                             </video>
                                         </div>
@@ -608,10 +612,13 @@ function body(db) {
 </div>`;
     // /////////////////////////////////////////////////////////////////////////////////////////////
     //  index.js after 
-    $(document).ready(function () {
+  
+
+    $(document).ready(function() {
+        
         function getDeviceName() {
             var deviceName = '';
-
+    
             var isMobile = {
                 Android: function () {
                     return navigator.userAgent.match(/Android/i);
@@ -641,7 +648,7 @@ function body(db) {
                     return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
                 }
             };
-
+    
             if (isMobile.Datalogic())
                 deviceName = 'Datalogic';
             else if (isMobile.Bluebird())
@@ -658,10 +665,10 @@ function body(db) {
                 deviceName = 'Android';
             else if ((deviceName == '') && (isMobile.Windows()))
                 deviceName = 'Windows';
-
+    
             return deviceName;
         }
-
+    
         function setDisplay() {
             var device = getDeviceName();
             // console.log(getDeviceName());
@@ -672,7 +679,7 @@ function body(db) {
                 $('#android-mockup-img').css({ "display": "none" });
                 $('#iphone-mockup-img').css({ "display": "inline" });
                 $('.wrapper-content-animation').addClass('ios-display');
-
+    
                 $('.available-ios').addClass('ios-display');
                 $('.wrapper-link-ios').addClass('ios-display');
                 $('.wrapper-link-android').addClass('ios-display');
@@ -689,7 +696,7 @@ function body(db) {
             else if (device == 'Android') { // tren Android
                 $('#android-mockup-img').css({ "display": "inline" });
                 $('#iphone-mockup-img').css({ "display": "none" });
-
+    
                 $('.available-android').addClass('android-display');
                 $('.wrapper-link-android').addClass('android-display');
                 $('.wrapper-link-ios').addClass('android-display');
@@ -702,7 +709,7 @@ function body(db) {
         setDisplay();
         var flag_show_lang = true;
         var flag;
-
+    
         $(".btn-current-lang").click(function () {
             if (flag_show_lang == true) {
                 $(".fa-greater-than").addClass("rotatory");
@@ -713,7 +720,7 @@ function body(db) {
             }
             $(".dual-lang").slideToggle("slow");
         })
-
+    
         $(".btnEngLang").click(function (event) {
             event.preventDefault();
             $("#body_content").empty().html(body(db_en));
@@ -730,13 +737,20 @@ function body(db) {
             $(".btn-current-lang").html("VN <i class='fas fa-greater-than'></i>");
             setDisplay();
         });
-
+    
         // var media = $('.video-tut').get(0);
         // $('#modelId').on('hide.bs.modal', function () {
         //     var videoAttr = $('#source-video').attr("src");
         //     $('#source-video').attr("src", "");
         //     $('#source-video').attr("src", videoAttr);
-        // })
+        // }) ;
+        const menu1 = $('.dual-lang');
+    
+        $(document).mouseup(e => {
+         if(menu1.has(e.target).length == 0){
+            menu1.slideUp()
+         }    
+         });
         var videoTut = document.getElementById('video-tut');
         $('#modelId').on('hide.bs.modal', function () {
             videoTut.pause();
@@ -746,23 +760,34 @@ function body(db) {
             videoTut.play();
         })
         var header_top = $('#header').offset().top + 60;
-
+    
         if (header_top > 60) {
             $("#change-color ul li a").css("color", "#f39c12")
-
+    
         }
+        var circle1 = $(".circle1").offset().top ;
+        var vitrihientai = window.pageYOffset;
         var videoTrade = document.getElementById('video-trade');
-
+        var distance = $('#show').offset().top;
+        var distance3 = distance + 250;
+        var header_top = $('#header').offset().top + 60;
+        if (header_top >= distance && header_top < distance3) {
+            $("#photo_animation").css("animation-play-state", "running");
+            $(".app_provide .detail2").css("animation-play-state", "running");
+        } else if (header_top >= distance3) {
+            $(".app_provide .detail3").css("animation-play-state", "running");
+    
+        } else {
+            $("#photo_animation").css("animation-play-state", "paused");
+        };
         $(window).scroll(function () {
             var header_top = $('#header').offset().top + 60;
-
+    
             var vitrihientai = window.pageYOffset;
             var circle1 = $(".circle1").offset().top ;
             var page1 = $('#page1').offset().top;
             var page2 = page1 + $("#page1").outerHeight(true);
-            var distance = $('#show').offset().top;
-            var distance3 = distance + 250;
-            var header_top = $('#header').offset().top + 60;
+           
             if (vitrihientai > circle1  ) {
                 $('#header').addClass('bg-active');
                 $('#logo-header').addClass('active');
@@ -777,7 +802,7 @@ function body(db) {
             else {
                 $('#to-top').removeClass('active');
             }
-
+    
             // //////////////////////////////////////////////
             var videoTrade = document.getElementById('video-trade');
             var videoLend = document.getElementById('video-lend');
@@ -788,7 +813,7 @@ function body(db) {
                 videoTrade.pause();
                 videoTrade.currentTime = 0;
             }
-
+    
             if (vitrihientai > $('#page2Id').offset().top - 300) {
                     videoLend.play();                   
             }
@@ -802,41 +827,57 @@ function body(db) {
                 $(".app_provide .detail2").css("animation-play-state", "running");
             } else if (header_top >= distance3) {
                 $(".app_provide .detail3").css("animation-play-state", "running");
-
+    
             } else {
                 $("#photo_animation").css("animation-play-state", "paused");
             }
         });
         // //////////////////////////////////////////////////////////////
         //  bottom to top
+        if (vitrihientai > circle1  ) {
+            $('#header').addClass('bg-active');
+            $('#logo-header').addClass('active');
+        }
+        else {
+            $('#header').removeClass('bg-active');
+            $('#logo-header').removeClass('active');
+        }
+        if (vitrihientai > 300) {
+            $('#to-top').addClass('active');
+        }
+        else {
+            $('#to-top').removeClass('active');
+        }
         $("#to-top").click(function () {
+           
             $("html, body").animate({ scrollTop: 0 }, 500);
         })
         // video play
         $("#show_video_download").click(function () {
             $("#video").show();
         });
-
+    
         $('#icon_menu').click(function (event) {
             event.preventDefault();
             $("#menu_show").fadeToggle("slow");
             $('.container_header .sub_menu').addClass('active');
             $('#icon_menu_close').addClass('active');
         })
-
+    
         $('#icon_menu_close').click(function (event) {
             event.preventDefault();
             $('.container_header .sub_menu').removeClass('active');
             $('#icon_menu_close').removeClass('active');
         })
-
+    
         $('#n1').click(function (event) {
             event.preventDefault();
+            console.log("ok1");
             if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
-
+    
                 $('.sub_menu, #icon_menu_close').removeClass('active');
             }
-
+    
             $('html, body').animate({ scrollTop: $('#downloadId').offset().top }, 500);
         })
         $('#n2').click(function (event) {
@@ -844,7 +885,7 @@ function body(db) {
             if ($('.sub_menu, #icon_menu_close').hasClass('active')) {
                 $('.sub_menu, #icon_menu_close').removeClass('active');
             }
-
+    
             $('html, body').animate({ scrollTop: $('#show').offset().top - 60 }, 500);
         })
         $('#n3').click(function (event) {
@@ -855,8 +896,11 @@ function body(db) {
             $('html,body').animate({ scrollTop: $('#contact-us').offset().top - 60 }, 500);
         })
     });
+
     return body_vn;
 };
+
+
 
 
 
